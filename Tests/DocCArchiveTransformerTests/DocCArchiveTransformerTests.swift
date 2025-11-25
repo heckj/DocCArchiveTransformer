@@ -1,7 +1,13 @@
 import Testing
+import Foundation
+import VendoredDocC
 
-@testable import DocCArchiveTransformer
+@Test func verifyVersionExists() async throws {
+    #expect(!VendoredDocC.VendoredVersion.description.isEmpty)
+    #expect(!VendoredDocC.VendoredVersion.commit.isEmpty)
+}
 
 @Test func example() async throws {
-  // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    let testBundle = #bundle
+    print(testBundle.bundlePath)
 }
