@@ -1,0 +1,181 @@
+{
+  "abstract" : [
+    {
+      "text" : "A sample method that does something.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SampleLibrary\/documentation\/SampleLibrary",
+        "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/sampleMethod()"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:13SampleLibrary0A6StructV12sampleMethodyyF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "sampleMethod"
+      },
+      {
+        "kind" : "text",
+        "text" : "()"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "SampleLibrary"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "sampleMethod()"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "sampleMethod"
+            },
+            {
+              "kind" : "text",
+              "text" : "()"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/samplelibrary\/samplestruct\/samplemethod()"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SampleLibrary/documentation/SampleLibrary": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SampleLibrary",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary"
+},
+"doc://SampleLibrary/documentation/SampleLibrary/SampleStruct": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SampleStruct"
+    }
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SampleStruct"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SampleStruct",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary\/samplestruct"
+},
+"doc://SampleLibrary/documentation/SampleLibrary/SampleStruct/sampleMethod()": {
+  "abstract" : [
+    {
+      "text" : "A sample method that does something.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "sampleMethod"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/sampleMethod()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "sampleMethod()",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary\/samplestruct\/samplemethod()"
+}
+}
+}

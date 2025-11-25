@@ -1,0 +1,268 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SampleLibrary\/documentation\/SampleLibrary"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:13SampleLibrary0A5ErrorO",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "SampleError"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "SampleLibrary"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "SampleError"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Enumeration",
+    "symbolKind" : "enum",
+    "title" : "SampleError"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "enum"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "SampleError"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/SampleLibrary\/s5ErrorP",
+        "doc:\/\/SampleLibrary\/s8SendableP",
+        "doc:\/\/SampleLibrary\/s16SendableMetatypeP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/computationFailed(reason:)",
+        "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/invalidCount"
+      ],
+      "title" : "Enumeration Cases"
+    },
+    {
+      "anchor" : "Default-Implementations",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/Error-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/samplelibrary\/sampleerror"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SampleLibrary/documentation/SampleLibrary": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SampleLibrary",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary"
+},
+"doc://SampleLibrary/documentation/SampleLibrary/SampleError": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SampleError"
+    }
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SampleError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SampleError",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary\/sampleerror"
+},
+"doc://SampleLibrary/documentation/SampleLibrary/SampleError/Error-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/Error-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Error Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary\/sampleerror\/error-implementations"
+},
+"doc://SampleLibrary/documentation/SampleLibrary/SampleError/computationFailed(reason:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "computationFailed"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "reason"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/computationFailed(reason:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "SampleError.computationFailed(reason:)",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary\/sampleerror\/computationfailed(reason:)"
+},
+"doc://SampleLibrary/documentation/SampleLibrary/SampleError/invalidCount": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "invalidCount"
+    }
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/invalidCount",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "SampleError.invalidCount",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary\/sampleerror\/invalidcount"
+},
+"doc://SampleLibrary/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/SampleLibrary\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
+},
+"doc://SampleLibrary/s5ErrorP": {
+  "identifier" : "doc:\/\/SampleLibrary\/s5ErrorP",
+  "title" : "Swift.Error",
+  "type" : "unresolvable"
+},
+"doc://SampleLibrary/s8SendableP": {
+  "identifier" : "doc:\/\/SampleLibrary\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

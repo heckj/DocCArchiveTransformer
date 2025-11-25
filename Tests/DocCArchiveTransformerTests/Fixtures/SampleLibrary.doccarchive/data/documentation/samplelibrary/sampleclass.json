@@ -1,0 +1,319 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SampleLibrary\/documentation\/SampleLibrary"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:13SampleLibrary0A5ClassC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "SampleClass"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "SampleLibrary"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "SampleClass"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "SampleClass"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "SampleClass"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Initializers",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass\/init(name:isActive:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass\/isActive",
+        "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass\/name"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass\/toggleActive()"
+      ],
+      "title" : "Instance Methods"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/samplelibrary\/sampleclass"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SampleLibrary/documentation/SampleLibrary": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SampleLibrary",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary"
+},
+"doc://SampleLibrary/documentation/SampleLibrary/SampleClass": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SampleClass"
+    }
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SampleClass"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SampleClass",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary\/sampleclass"
+},
+"doc://SampleLibrary/documentation/SampleLibrary/SampleClass/init(name:isActive:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "isActive"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass\/init(name:isActive:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(name:isActive:)",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary\/sampleclass\/init(name:isactive:)"
+},
+"doc://SampleLibrary/documentation/SampleLibrary/SampleClass/isActive": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "isActive"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass\/isActive",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "isActive",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary\/sampleclass\/isactive"
+},
+"doc://SampleLibrary/documentation/SampleLibrary/SampleClass/name": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass\/name",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "name",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary\/sampleclass\/name"
+},
+"doc://SampleLibrary/documentation/SampleLibrary/SampleClass/toggleActive()": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "toggleActive"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass\/toggleActive()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "toggleActive()",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary\/sampleclass\/toggleactive()"
+}
+}
+}

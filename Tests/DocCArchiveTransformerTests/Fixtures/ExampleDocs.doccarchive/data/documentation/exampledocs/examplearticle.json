@@ -1,0 +1,113 @@
+{
+  "abstract" : [
+    {
+      "text" : "An example article to display.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/ExampleDocs\/documentation\/ExampleDocs"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/ExampleDocs\/documentation\/ExampleDocs\/ExampleArticle"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "ExampleDocs"
+      }
+    ],
+    "role" : "article",
+    "roleHeading" : "Article",
+    "title" : "ExampleArticle"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Description of what the article is about - the problem being solved, etc.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "func main() {",
+            "    print(\"hello world\")",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "anchor" : "Section-header",
+          "level" : 3,
+          "text" : "Section header",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Details, step by step, or explanations grouped by section headers.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/exampledocs\/examplearticle"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://ExampleDocs/documentation/ExampleDocs": {
+  "abstract" : [
+    {
+      "text" : "Summary for example docs",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/ExampleDocs\/documentation\/ExampleDocs",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "ExampleDocs",
+  "type" : "topic",
+  "url" : "\/documentation\/exampledocs"
+}
+}
+}

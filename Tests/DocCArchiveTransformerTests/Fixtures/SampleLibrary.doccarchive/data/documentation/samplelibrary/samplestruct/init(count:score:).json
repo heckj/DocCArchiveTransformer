@@ -1,0 +1,250 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SampleLibrary\/documentation\/SampleLibrary",
+        "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/init(count:score:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:13SampleLibrary0A6StructV5count5scoreACSu_Sdtcfc",
+    "fragments" : [
+      {
+        "kind" : "identifier",
+        "text" : "init"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "count"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Su",
+        "text" : "UInt"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "score"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sd",
+        "text" : "Double"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "SampleLibrary"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Initializer",
+    "symbolKind" : "init",
+    "title" : "init(count:score:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "init"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "count"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Su",
+              "text" : "UInt"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "score"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sd",
+              "text" : "Double"
+            },
+            {
+              "kind" : "text",
+              "text" : ")"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/samplelibrary\/samplestruct\/init(count:score:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SampleLibrary/documentation/SampleLibrary": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SampleLibrary",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary"
+},
+"doc://SampleLibrary/documentation/SampleLibrary/SampleStruct": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SampleStruct"
+    }
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SampleStruct"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SampleStruct",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary\/samplestruct"
+},
+"doc://SampleLibrary/documentation/SampleLibrary/SampleStruct/init(count:score:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "count"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Su",
+      "text" : "UInt"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "score"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sd",
+      "text" : "Double"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/init(count:score:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(count:score:)",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary\/samplestruct\/init(count:score:)"
+}
+}
+}

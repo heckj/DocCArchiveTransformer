@@ -1,0 +1,134 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/SampleLibrary\/documentation\/SampleLibrary",
+        "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/Error-Implementations"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "SampleLibrary"
+      }
+    ],
+    "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
+    "title" : "Error Implementations"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/localizedDescription"
+      ],
+      "title" : "Instance Properties"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/samplelibrary\/sampleerror\/error-implementations"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SampleLibrary/documentation/SampleLibrary": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SampleLibrary",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary"
+},
+"doc://SampleLibrary/documentation/SampleLibrary/SampleError": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SampleError"
+    }
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SampleError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SampleError",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary\/sampleerror"
+},
+"doc://SampleLibrary/documentation/SampleLibrary/SampleError/localizedDescription": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "localizedDescription"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/localizedDescription",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "localizedDescription",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary\/sampleerror\/localizeddescription"
+}
+}
+}

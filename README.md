@@ -1,20 +1,15 @@
 # DocCArchiveTransformer
 
-The data files for ingesting DocC archives source from the [DocC repository](https://github.com/swiftlang/swift-docc/) of
-the [Swift Project](https://swift.org/):
+The data files for ingesting DocC archives source from the 
+[DocC repository](https://github.com/swiftlang/swift-docc/) of the [Swift Project](https://swift.org/).
+Read through [the vendored README](Sources/VendoredDocC/README.md) for details on how it was assembled
+and turned into Swift types.  
 
-```
-./Sources/SwiftDocC/SwiftDocC.docc/Resources/RenderNode.spec.json
-./Sources/SwiftDocC/SwiftDocC.docc/Resources/IndexingRecords.spec.json
-./Sources/SwiftDocC/SwiftDocC.docc/Resources/Metadata.json
-./Sources/SwiftDocC/SwiftDocC.docc/Resources/RenderIndex.spec.json
-./Sources/SwiftDocC/SwiftDocC.docc/Resources/Benchmark.json
-./Sources/SwiftDocC/SwiftDocC.docc/Resources/Diagnostics.json
-./Sources/SwiftDocC/SwiftDocC.docc/Resources/LinkableEntities.json
-./Sources/SwiftDocC/SwiftDocC.docc/Resources/ThemeSettings.spec.json
-./Sources/SwiftDocC/SwiftDocC.docc/Resources/Assets.json
-```
+The test fixtures were generated from [heckj/example-docc-project](https://github.com/heckj/example-docc-project),
+creating DocC Archives and zipping them to use within this repository. 
+The commands used to generate the two archives:
 
-swift run swift-openapi-generator generate --mode types --naming-strategy idiomatic \
-   --output-directory Sources/DocCArchiveTransformer \
-   ~/src/swift-project/swift-docc/Sources/SwiftDocC/SwiftDocC.docc/Resources/RenderNode.spec.json
+```bash
+swift package --disable-sandbox generate-documentation --target ExampleDocs --emit-digest
+swift package --disable-sandbox generate-documentation --target SampleLibrary --emit-digest
+```

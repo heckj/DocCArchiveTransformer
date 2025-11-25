@@ -1,0 +1,538 @@
+[
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor\/getState(forKey:)"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : " ",
+    "summary" : "",
+    "title" : "getState(forKey:)"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : " ",
+    "summary" : "",
+    "title" : "SampleActor"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : " ",
+    "summary" : "",
+    "title" : "SampleStruct"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/id"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : "Inherited from Identifiable.id. ",
+    "summary" : "Inherited from Identifiable.id.",
+    "title" : "id"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass\/init(name:isActive:)"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : " ",
+    "summary" : "",
+    "title" : "init(name:isActive:)"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/invalidCount"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : " ",
+    "summary" : "",
+    "title" : "SampleError.invalidCount"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/count"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : " ",
+    "summary" : "",
+    "title" : "count"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "article",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/Error-Implementations"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : "",
+    "summary" : "",
+    "title" : "Error Implementations"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/sampleMethod()"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : "A sample method that does something. ",
+    "summary" : "A sample method that does something.",
+    "title" : "sampleMethod()"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/description"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : "Inherited from CustomStringConvertible.description. ",
+    "summary" : "Inherited from CustomStringConvertible.description.",
+    "title" : "description"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/score"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : " ",
+    "summary" : "",
+    "title" : "score"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : " ",
+    "summary" : "",
+    "title" : "SampleError"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : " ",
+    "summary" : "",
+    "title" : "SampleClass"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/computationFailed(reason:)"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : " ",
+    "summary" : "",
+    "title" : "SampleError.computationFailed(reason:)"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "article",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor\/Actor-Implementations"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : "",
+    "summary" : "",
+    "title" : "Actor Implementations"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass\/name"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : " ",
+    "summary" : "",
+    "title" : "name"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/localizedDescription"
+      },
+      "type" : "topLevelPage"
+    },
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "8.0",
+        "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "10.10",
+        "name" : "macOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "9.0",
+        "name" : "tvOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "2.0",
+        "name" : "watchOS",
+        "unavailable" : false
+      }
+    ],
+    "rawIndexableTextContent" : "Inherited from Error.localizedDescription. ",
+    "summary" : "Inherited from Error.localizedDescription.",
+    "title" : "localizedDescription"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "article",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/CustomStringConvertible-Implementations"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : "",
+    "summary" : "",
+    "title" : "CustomStringConvertible Implementations"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/init(count:score:)"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : " ",
+    "summary" : "",
+    "title" : "init(count:score:)"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass\/toggleActive()"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : " ",
+    "summary" : "",
+    "title" : "toggleActive()"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass\/isActive"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : " ",
+    "summary" : "",
+    "title" : "isActive"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : "",
+    "summary" : "",
+    "title" : "SampleLibrary"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor\/updateState(forKey:value:)"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : " ",
+    "summary" : "",
+    "title" : "updateState(forKey:value:)"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor\/preconditionIsolated(_:file:line:)"
+      },
+      "type" : "topLevelPage"
+    },
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "10.15",
+        "name" : "macOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "tvOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "6.0",
+        "name" : "watchOS",
+        "unavailable" : false
+      }
+    ],
+    "rawIndexableTextContent" : "Inherited from Actor.preconditionIsolated(_:file:line:). ",
+    "summary" : "Inherited from Actor.preconditionIsolated(_:file:line:).",
+    "title" : "preconditionIsolated(_:file:line:)"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor\/assumeIsolated(_:file:line:)"
+      },
+      "type" : "topLevelPage"
+    },
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "10.15",
+        "name" : "macOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "tvOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "6.0",
+        "name" : "watchOS",
+        "unavailable" : false
+      }
+    ],
+    "rawIndexableTextContent" : "Inherited from Actor.assumeIsolated(_:file:line:). ",
+    "summary" : "Inherited from Actor.assumeIsolated(_:file:line:).",
+    "title" : "assumeIsolated(_:file:line:)"
+  },
+  {
+    "headings" : [
+
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor\/assertIsolated(_:file:line:)"
+      },
+      "type" : "topLevelPage"
+    },
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "10.15",
+        "name" : "macOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "tvOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "6.0",
+        "name" : "watchOS",
+        "unavailable" : false
+      }
+    ],
+    "rawIndexableTextContent" : "Inherited from Actor.assertIsolated(_:file:line:). ",
+    "summary" : "Inherited from Actor.assertIsolated(_:file:line:).",
+    "title" : "assertIsolated(_:file:line:)"
+  }
+]

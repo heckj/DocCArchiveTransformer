@@ -1,0 +1,113 @@
+{
+  "abstract" : [
+    {
+      "text" : "Summary for example docs",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/ExampleDocs\/documentation\/ExampleDocs"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "ExampleDocs",
+    "modules" : [
+      {
+        "name" : "ExampleDocs"
+      }
+    ],
+    "role" : "collection",
+    "roleHeading" : "Framework",
+    "symbolKind" : "module",
+    "title" : "ExampleDocs"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A brief overview…",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Topics",
+      "identifiers" : [
+        "doc:\/\/ExampleDocs\/documentation\/ExampleDocs\/ExampleArticle"
+      ]
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/exampledocs"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://ExampleDocs/documentation/ExampleDocs": {
+  "abstract" : [
+    {
+      "text" : "Summary for example docs",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/ExampleDocs\/documentation\/ExampleDocs",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "ExampleDocs",
+  "type" : "topic",
+  "url" : "\/documentation\/exampledocs"
+},
+"doc://ExampleDocs/documentation/ExampleDocs/ExampleArticle": {
+  "abstract" : [
+    {
+      "text" : "An example article to display.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/ExampleDocs\/documentation\/ExampleDocs\/ExampleArticle",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "ExampleArticle",
+  "type" : "topic",
+  "url" : "\/documentation\/exampledocs\/examplearticle"
+}
+}
+}

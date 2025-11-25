@@ -42,7 +42,8 @@ let package = Package(
     ),
     .testTarget(
       name: "DocCArchiveTransformerTests",
-      dependencies: ["DocCArchiveTransformer"]
+      dependencies: ["DocCArchiveTransformer"],
+      resources: [.copy("Fixtures")]
     ),
   ]
 )

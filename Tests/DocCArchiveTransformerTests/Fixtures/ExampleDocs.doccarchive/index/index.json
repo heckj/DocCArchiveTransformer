@@ -1,0 +1,26 @@
+{
+  "includedArchiveIdentifiers" : [
+    "ExampleDocs"
+  ],
+  "interfaceLanguages" : {
+    "swift" : [
+      {
+        "children" : [
+          {
+            "path" : "\/documentation\/exampledocs\/examplearticle",
+            "title" : "ExampleArticle",
+            "type" : "article"
+          }
+        ],
+        "path" : "\/documentation\/exampledocs",
+        "title" : "ExampleDocs",
+        "type" : "module"
+      }
+    ]
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 1,
+    "patch" : 2
+  }
+}

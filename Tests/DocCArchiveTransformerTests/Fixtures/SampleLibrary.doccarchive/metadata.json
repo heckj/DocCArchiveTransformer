@@ -1,0 +1,9 @@
+{
+  "bundleDisplayName" : "SampleLibrary",
+  "bundleID" : "SampleLibrary",
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 1,
+    "patch" : 0
+  }
+}

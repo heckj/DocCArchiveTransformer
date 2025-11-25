@@ -1,0 +1,1512 @@
+[
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "getState"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "forKey"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "internalParam",
+        "text" : "key"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Si",
+        "text" : "Int"
+      },
+      {
+        "kind" : "text",
+        "text" : "?"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.instanceMethod",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/sampleactor\/getstate(forkey:)",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor\/getState(forKey:)",
+    "taskGroups" : [
+
+    ],
+    "title" : "getState(forKey:)",
+    "usr" : "s:13SampleLibrary0A5ActorC8getState6forKeySiSgSS_tF"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "actor"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "SampleActor"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.class",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/sampleactor",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor",
+    "taskGroups" : [
+      {
+        "identifiers" : [
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor\/getState(forKey:)",
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor\/updateState(forKey:value:)"
+        ],
+        "title" : "Instance Methods"
+      },
+      {
+        "identifiers" : [
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor\/Actor-Implementations"
+        ],
+        "title" : "Default Implementations"
+      }
+    ],
+    "title" : "SampleActor",
+    "usr" : "s:13SampleLibrary0A5ActorC"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "SampleStruct"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.structure",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/samplestruct",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct",
+    "taskGroups" : [
+      {
+        "identifiers" : [
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/init(count:score:)"
+        ],
+        "title" : "Initializers"
+      },
+      {
+        "identifiers" : [
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/count",
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/id",
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/score"
+        ],
+        "title" : "Instance Properties"
+      },
+      {
+        "identifiers" : [
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/sampleMethod()"
+        ],
+        "title" : "Instance Methods"
+      },
+      {
+        "identifiers" : [
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/CustomStringConvertible-Implementations"
+        ],
+        "title" : "Default Implementations"
+      }
+    ],
+    "title" : "SampleStruct",
+    "usr" : "s:13SampleLibrary0A6StructV"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "let"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "id"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.instanceProperty",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/samplestruct\/id",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/id",
+    "taskGroups" : [
+
+    ],
+    "title" : "id",
+    "usr" : "s:13SampleLibrary0A6StructV2idSSvp"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "init"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "name"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "isActive"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sb",
+        "text" : "Bool"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.initializer",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/sampleclass\/init(name:isactive:)",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass\/init(name:isActive:)",
+    "taskGroups" : [
+
+    ],
+    "title" : "init(name:isActive:)",
+    "usr" : "s:13SampleLibrary0A5ClassC4name8isActiveACSS_Sbtcfc"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "case"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "invalidCount"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.enumerationCase",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/sampleerror\/invalidcount",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/invalidCount",
+    "taskGroups" : [
+
+    ],
+    "title" : "SampleError.invalidCount",
+    "usr" : "s:13SampleLibrary0A5ErrorO12invalidCountyA2CmF"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "let"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "count"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Su",
+        "text" : "UInt"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.instanceProperty",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/samplestruct\/count",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/count",
+    "taskGroups" : [
+
+    ],
+    "title" : "count",
+    "usr" : "s:13SampleLibrary0A6StructV5countSuvp"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.collectionGroup",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/sampleerror\/error-implementations",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/Error-Implementations",
+    "taskGroups" : [
+      {
+        "identifiers" : [
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/localizedDescription"
+        ],
+        "title" : "Instance Properties"
+      }
+    ],
+    "title" : "Error Implementations"
+  },
+  {
+    "abstract" : [
+      {
+        "text" : "A sample method that does something.",
+        "type" : "text"
+      }
+    ],
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "sampleMethod"
+      },
+      {
+        "kind" : "text",
+        "text" : "()"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.instanceMethod",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/samplestruct\/samplemethod()",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/sampleMethod()",
+    "taskGroups" : [
+
+    ],
+    "title" : "sampleMethod()",
+    "usr" : "s:13SampleLibrary0A6StructV12sampleMethodyyF"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "var"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "description"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      },
+      {
+        "kind" : "text",
+        "text" : " { "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "get"
+      },
+      {
+        "kind" : "text",
+        "text" : " }"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.instanceProperty",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/samplestruct\/description",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/description",
+    "taskGroups" : [
+
+    ],
+    "title" : "description",
+    "usr" : "s:13SampleLibrary0A6StructV11descriptionSSvp"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "let"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "score"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sd",
+        "text" : "Double"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.instanceProperty",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/samplestruct\/score",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/score",
+    "taskGroups" : [
+
+    ],
+    "title" : "score",
+    "usr" : "s:13SampleLibrary0A6StructV5scoreSdvp"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "enum"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "SampleError"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.enumeration",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/sampleerror",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError",
+    "taskGroups" : [
+      {
+        "identifiers" : [
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/computationFailed(reason:)",
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/invalidCount"
+        ],
+        "title" : "Enumeration Cases"
+      },
+      {
+        "identifiers" : [
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/Error-Implementations"
+        ],
+        "title" : "Default Implementations"
+      }
+    ],
+    "title" : "SampleError",
+    "usr" : "s:13SampleLibrary0A5ErrorO"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "SampleClass"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.class",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/sampleclass",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass",
+    "taskGroups" : [
+      {
+        "identifiers" : [
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass\/init(name:isActive:)"
+        ],
+        "title" : "Initializers"
+      },
+      {
+        "identifiers" : [
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass\/isActive",
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass\/name"
+        ],
+        "title" : "Instance Properties"
+      },
+      {
+        "identifiers" : [
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass\/toggleActive()"
+        ],
+        "title" : "Instance Methods"
+      }
+    ],
+    "title" : "SampleClass",
+    "usr" : "s:13SampleLibrary0A5ClassC"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "case"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "computationFailed"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "reason"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.enumerationCase",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/sampleerror\/computationfailed(reason:)",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/computationFailed(reason:)",
+    "taskGroups" : [
+
+    ],
+    "title" : "SampleError.computationFailed(reason:)",
+    "usr" : "s:13SampleLibrary0A5ErrorO17computationFailedyACSS_tcACmF"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.collectionGroup",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/sampleactor\/actor-implementations",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor\/Actor-Implementations",
+    "taskGroups" : [
+      {
+        "identifiers" : [
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor\/assertIsolated(_:file:line:)",
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor\/assumeIsolated(_:file:line:)",
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor\/preconditionIsolated(_:file:line:)"
+        ],
+        "title" : "Instance Methods"
+      }
+    ],
+    "title" : "Actor Implementations"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "var"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "name"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.instanceProperty",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/sampleclass\/name",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass\/name",
+    "taskGroups" : [
+
+    ],
+    "title" : "name",
+    "usr" : "s:13SampleLibrary0A5ClassC4nameSSvp"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "var"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "localizedDescription"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      },
+      {
+        "kind" : "text",
+        "text" : " { "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "get"
+      },
+      {
+        "kind" : "text",
+        "text" : " }"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.instanceProperty",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/sampleerror\/localizeddescription",
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "8.0",
+        "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "10.10",
+        "name" : "macOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "9.0",
+        "name" : "tvOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "2.0",
+        "name" : "watchOS",
+        "unavailable" : false
+      }
+    ],
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError\/localizedDescription",
+    "taskGroups" : [
+
+    ],
+    "title" : "localizedDescription",
+    "usr" : "s:s5ErrorP10FoundationE20localizedDescriptionSSvp::SYNTHESIZED::s:13SampleLibrary0A5ErrorO"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.collectionGroup",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/samplestruct\/customstringconvertible-implementations",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/CustomStringConvertible-Implementations",
+    "taskGroups" : [
+      {
+        "identifiers" : [
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/description"
+        ],
+        "title" : "Instance Properties"
+      }
+    ],
+    "title" : "CustomStringConvertible Implementations"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "init"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "count"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Su",
+        "text" : "UInt"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "score"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sd",
+        "text" : "Double"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.initializer",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/samplestruct\/init(count:score:)",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct\/init(count:score:)",
+    "taskGroups" : [
+
+    ],
+    "title" : "init(count:score:)",
+    "usr" : "s:13SampleLibrary0A6StructV5count5scoreACSu_Sdtcfc"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "toggleActive"
+      },
+      {
+        "kind" : "text",
+        "text" : "()"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.instanceMethod",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/sampleclass\/toggleactive()",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass\/toggleActive()",
+    "taskGroups" : [
+
+    ],
+    "title" : "toggleActive()",
+    "usr" : "s:13SampleLibrary0A5ClassC12toggleActiveyyF"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "var"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "isActive"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sb",
+        "text" : "Bool"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.instanceProperty",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/sampleclass\/isactive",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass\/isActive",
+    "taskGroups" : [
+
+    ],
+    "title" : "isActive",
+    "usr" : "s:13SampleLibrary0A5ClassC8isActiveSbvp"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "kind" : "org.swift.docc.kind.module",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary",
+    "taskGroups" : [
+      {
+        "identifiers" : [
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor",
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass"
+        ],
+        "title" : "Classes"
+      },
+      {
+        "identifiers" : [
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct"
+        ],
+        "title" : "Structures"
+      },
+      {
+        "identifiers" : [
+          "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError"
+        ],
+        "title" : "Enumerations"
+      }
+    ],
+    "title" : "SampleLibrary",
+    "usr" : "SampleLibrary"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "updateState"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "forKey"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "internalParam",
+        "text" : "key"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "value"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Si",
+        "text" : "Int"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.instanceMethod",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/sampleactor\/updatestate(forkey:value:)",
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor\/updateState(forKey:value:)",
+    "taskGroups" : [
+
+    ],
+    "title" : "updateState(forKey:value:)",
+    "usr" : "s:13SampleLibrary0A5ActorC11updateState6forKey5valueySS_SitF"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "text",
+        "text" : "@backDeployed(before: macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0)\n"
+      },
+      {
+        "kind" : "attribute",
+        "text" : "nonisolated"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "preconditionIsolated"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "_"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "internalParam",
+        "text" : "message"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "attribute",
+        "text" : "@autoclosure "
+      },
+      {
+        "kind" : "text",
+        "text" : "() -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      },
+      {
+        "kind" : "text",
+        "text" : " = String(), "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "file"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s12StaticStringV",
+        "text" : "StaticString"
+      },
+      {
+        "kind" : "text",
+        "text" : " = "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "#fileID"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "line"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Su",
+        "text" : "UInt"
+      },
+      {
+        "kind" : "text",
+        "text" : " = "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "#line"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.instanceMethod",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/sampleactor\/preconditionisolated(_:file:line:)",
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "10.15",
+        "name" : "macOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "tvOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "6.0",
+        "name" : "watchOS",
+        "unavailable" : false
+      }
+    ],
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor\/preconditionIsolated(_:file:line:)",
+    "taskGroups" : [
+
+    ],
+    "title" : "preconditionIsolated(_:file:line:)",
+    "usr" : "s:ScA12_ConcurrencyE20preconditionIsolated_4file4lineySSyXK_s12StaticStringVSutF::SYNTHESIZED::s:13SampleLibrary0A5ActorC"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "attribute",
+        "text" : "nonisolated"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "assumeIsolated"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "genericParameter",
+        "text" : "T"
+      },
+      {
+        "kind" : "text",
+        "text" : ">("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "_"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "internalParam",
+        "text" : "operation"
+      },
+      {
+        "kind" : "text",
+        "text" : ": ("
+      },
+      {
+        "kind" : "keyword",
+        "text" : "isolated"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "Self"
+      },
+      {
+        "kind" : "text",
+        "text" : ") "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "throws"
+      },
+      {
+        "kind" : "text",
+        "text" : " -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "T"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "file"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s12StaticStringV",
+        "text" : "StaticString"
+      },
+      {
+        "kind" : "text",
+        "text" : " = "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "#fileID"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "line"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Su",
+        "text" : "UInt"
+      },
+      {
+        "kind" : "text",
+        "text" : " = "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "#line"
+      },
+      {
+        "kind" : "text",
+        "text" : ") "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "rethrows"
+      },
+      {
+        "kind" : "text",
+        "text" : " -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "T"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "where"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "T"
+      },
+      {
+        "kind" : "text",
+        "text" : " : "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s8SendableP",
+        "text" : "Sendable"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.instanceMethod",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/sampleactor\/assumeisolated(_:file:line:)",
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "10.15",
+        "name" : "macOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "tvOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "6.0",
+        "name" : "watchOS",
+        "unavailable" : false
+      }
+    ],
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor\/assumeIsolated(_:file:line:)",
+    "taskGroups" : [
+
+    ],
+    "title" : "assumeIsolated(_:file:line:)",
+    "usr" : "s:ScA12_ConcurrencyE14assumeIsolated_4file4lineqd__qd__xYiKXE_s12StaticStringVSutKs8SendableRd__lF::SYNTHESIZED::s:13SampleLibrary0A5ActorC"
+  },
+  {
+    "availableLanguages" : [
+      "swift"
+    ],
+    "fragments" : [
+      {
+        "kind" : "text",
+        "text" : "@backDeployed(before: macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0)\n"
+      },
+      {
+        "kind" : "attribute",
+        "text" : "nonisolated"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "assertIsolated"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "_"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "internalParam",
+        "text" : "message"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "attribute",
+        "text" : "@autoclosure "
+      },
+      {
+        "kind" : "text",
+        "text" : "() -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      },
+      {
+        "kind" : "text",
+        "text" : " = String(), "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "file"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s12StaticStringV",
+        "text" : "StaticString"
+      },
+      {
+        "kind" : "text",
+        "text" : " = "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "#fileID"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "line"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Su",
+        "text" : "UInt"
+      },
+      {
+        "kind" : "text",
+        "text" : " = "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "#line"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "kind" : "org.swift.docc.kind.instanceMethod",
+    "language" : "swift",
+    "path" : "\/documentation\/samplelibrary\/sampleactor\/assertisolated(_:file:line:)",
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "10.15",
+        "name" : "macOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "tvOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "6.0",
+        "name" : "watchOS",
+        "unavailable" : false
+      }
+    ],
+    "referenceURL" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor\/assertIsolated(_:file:line:)",
+    "taskGroups" : [
+
+    ],
+    "title" : "assertIsolated(_:file:line:)",
+    "usr" : "s:ScA12_ConcurrencyE14assertIsolated_4file4lineySSyXK_s12StaticStringVSutF::SYNTHESIZED::s:13SampleLibrary0A5ActorC"
+  }
+]

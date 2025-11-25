@@ -1,0 +1,211 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "SampleLibrary",
+    "modules" : [
+      {
+        "name" : "SampleLibrary"
+      }
+    ],
+    "role" : "collection",
+    "roleHeading" : "Framework",
+    "symbolKind" : "module",
+    "title" : "SampleLibrary"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Classes",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor",
+        "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass"
+      ],
+      "title" : "Classes"
+    },
+    {
+      "anchor" : "Structures",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct"
+      ],
+      "title" : "Structures"
+    },
+    {
+      "anchor" : "Enumerations",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError"
+      ],
+      "title" : "Enumerations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/samplelibrary"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://SampleLibrary/documentation/SampleLibrary": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "SampleLibrary",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary"
+},
+"doc://SampleLibrary/documentation/SampleLibrary/SampleActor": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "actor"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SampleActor"
+    }
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleActor",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SampleActor"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SampleActor",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary\/sampleactor"
+},
+"doc://SampleLibrary/documentation/SampleLibrary/SampleClass": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SampleClass"
+    }
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleClass",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SampleClass"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SampleClass",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary\/sampleclass"
+},
+"doc://SampleLibrary/documentation/SampleLibrary/SampleError": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SampleError"
+    }
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SampleError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SampleError",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary\/sampleerror"
+},
+"doc://SampleLibrary/documentation/SampleLibrary/SampleStruct": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SampleStruct"
+    }
+  ],
+  "identifier" : "doc:\/\/SampleLibrary\/documentation\/SampleLibrary\/SampleStruct",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SampleStruct"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SampleStruct",
+  "type" : "topic",
+  "url" : "\/documentation\/samplelibrary\/samplestruct"
+}
+}
+}

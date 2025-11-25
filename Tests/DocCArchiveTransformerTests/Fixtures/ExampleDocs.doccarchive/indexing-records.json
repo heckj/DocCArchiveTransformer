@@ -1,0 +1,35 @@
+[
+  {
+    "headings" : [
+      "Overview"
+    ],
+    "kind" : "symbol",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/ExampleDocs\/documentation\/ExampleDocs"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : "Summary for example docs Overview A brief overview…",
+    "summary" : "Summary for example docs",
+    "title" : "ExampleDocs"
+  },
+  {
+    "headings" : [
+      "Overview",
+      "Section header"
+    ],
+    "kind" : "article",
+    "location" : {
+      "reference" : {
+        "interfaceLanguage" : "swift",
+        "url" : "doc:\/\/ExampleDocs\/documentation\/ExampleDocs\/ExampleArticle"
+      },
+      "type" : "topLevelPage"
+    },
+    "rawIndexableTextContent" : "An example article to display. Overview Description of what the article is about - the problem being solved, etc.  Section header Details, step by step, or explanations grouped by section headers.",
+    "summary" : "An example article to display.",
+    "title" : "ExampleArticle"
+  }
+]

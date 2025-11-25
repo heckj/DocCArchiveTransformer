@@ -1,0 +1,228 @@
+{
+  "includedArchiveIdentifiers" : [
+    "SampleLibrary"
+  ],
+  "interfaceLanguages" : {
+    "swift" : [
+      {
+        "children" : [
+          {
+            "title" : "Classes",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/samplelibrary\/sampleactor\/getstate(forkey:)",
+                "title" : "func getState(forKey: String) -> Int?",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/samplelibrary\/sampleactor\/updatestate(forkey:value:)",
+                "title" : "func updateState(forKey: String, value: Int)",
+                "type" : "method"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/samplelibrary\/sampleactor\/assertisolated(_:file:line:)",
+                    "title" : "func assertIsolated(@autoclosure () -> String, file: StaticString, line: UInt)",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/samplelibrary\/sampleactor\/assumeisolated(_:file:line:)",
+                    "title" : "func assumeIsolated<T>((isolated Self) throws -> T, file: StaticString, line: UInt) rethrows -> T",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/samplelibrary\/sampleactor\/preconditionisolated(_:file:line:)",
+                    "title" : "func preconditionIsolated(@autoclosure () -> String, file: StaticString, line: UInt)",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/samplelibrary\/sampleactor\/actor-implementations",
+                "title" : "Actor Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/samplelibrary\/sampleactor",
+            "title" : "SampleActor",
+            "type" : "class"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/samplelibrary\/sampleclass\/init(name:isactive:)",
+                "title" : "init(name: String, isActive: Bool)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/samplelibrary\/sampleclass\/isactive",
+                "title" : "var isActive: Bool",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/samplelibrary\/sampleclass\/name",
+                "title" : "var name: String",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/samplelibrary\/sampleclass\/toggleactive()",
+                "title" : "func toggleActive()",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/samplelibrary\/sampleclass",
+            "title" : "SampleClass",
+            "type" : "class"
+          },
+          {
+            "title" : "Structures",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/samplelibrary\/samplestruct\/init(count:score:)",
+                "title" : "init(count: UInt, score: Double)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/samplelibrary\/samplestruct\/count",
+                "title" : "let count: UInt",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/samplelibrary\/samplestruct\/id",
+                "title" : "let id: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/samplelibrary\/samplestruct\/score",
+                "title" : "let score: Double",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/samplelibrary\/samplestruct\/samplemethod()",
+                "title" : "func sampleMethod()",
+                "type" : "method"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/samplelibrary\/samplestruct\/description",
+                    "title" : "var description: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/samplelibrary\/samplestruct\/customstringconvertible-implementations",
+                "title" : "CustomStringConvertible Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/samplelibrary\/samplestruct",
+            "title" : "SampleStruct",
+            "type" : "struct"
+          },
+          {
+            "title" : "Enumerations",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/samplelibrary\/sampleerror\/computationfailed(reason:)",
+                "title" : "case computationFailed(reason: String)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/samplelibrary\/sampleerror\/invalidcount",
+                "title" : "case invalidCount",
+                "type" : "case"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/samplelibrary\/sampleerror\/localizeddescription",
+                    "title" : "var localizedDescription: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/samplelibrary\/sampleerror\/error-implementations",
+                "title" : "Error Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/samplelibrary\/sampleerror",
+            "title" : "SampleError",
+            "type" : "enum"
+          }
+        ],
+        "path" : "\/documentation\/samplelibrary",
+        "title" : "SampleLibrary",
+        "type" : "module"
+      }
+    ]
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 1,
+    "patch" : 2
+  }
+}
