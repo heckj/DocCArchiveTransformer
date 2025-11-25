@@ -23,9 +23,11 @@ jobs:
     - uses: actions/checkout@v6
     - name: Build
       run: swift build -v
+
   test:
     runs-on: ubuntu-latest
-    container: swift:6.2
+    container: 
+      image: swift:6.2
     - name: sanitize w/ tests
       run: swift test --sanitize=address
     - name: Run tests w/ code coverage
