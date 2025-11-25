@@ -1,5 +1,4 @@
 import Testing
-import Foundation
 import VendoredDocC
 
 @Test func verifyVersionExists() async throws {
@@ -7,7 +6,7 @@ import VendoredDocC
     #expect(!VendoredDocC.VendoredVersion.commit.isEmpty)
 }
 
-@Test func example() async throws {
-    let testBundle = #bundle
-    print(testBundle.bundlePath)
-}
+//@Test func example() async throws {
+//    let testBundle = #bundle
+//    print(testBundle.bundlePath)
+//}
