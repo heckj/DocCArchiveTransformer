@@ -31,6 +31,6 @@ jobs:
     steps:
     - uses: actions/checkout@v6
     - name: sanitize w/ tests
-      run: swift test --sanitize=address
+      run: swift test --sanitize=thread
     - name: Run tests w/ code coverage
       run: swift test -v  --enable-code-coverage
