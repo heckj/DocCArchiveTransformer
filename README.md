@@ -13,3 +13,11 @@ The commands used to generate the two archives:
 swift package --disable-sandbox generate-documentation --target ExampleDocs --emit-digest
 swift package --disable-sandbox generate-documentation --target SampleLibrary --emit-digest
 ```
+
+## Locally testing on Linux:
+
+```bash
+rm -rf .build
+container run -it -c 4 -m 8g -v "$(pwd):/src" -w src/ swift:6.2 swift test
+```
+
