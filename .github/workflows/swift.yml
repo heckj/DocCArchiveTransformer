@@ -1,0 +1,38 @@
+name: Swift
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # N-2 support strategy for the major Swift versions, starting
+    # with Swift 6.1
+    strategy:
+      matrix:
+        image: ["swift:6.1", "swift:6.2"]
+
+    container:
+      image: ${{ matrix.image }}
+    steps:
+    - uses: actions/checkout@v6
+    - name: Build
+      run: swift build -v
+
+  test:
+    runs-on: ubuntu-latest
+    container: 
+      image: swift:6.2
+    steps:
+    - uses: actions/checkout@v6
+    - name: sanitize w/ tests
+      run: swift test --sanitize=thread --disable-xctest
+    - name: sanitize w/ tests
+      run: swift test --sanitize=address --disable-xctest
+    - name: Run tests w/ code coverage
+      run: swift test --enable-code-coverage  --disable-xctest
