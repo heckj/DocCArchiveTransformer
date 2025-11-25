@@ -35,4 +35,4 @@ jobs:
     - name: sanitize w/ tests
       run: swift test --sanitize=address --disable-xctest
     - name: Run tests w/ code coverage
-      run: swift test --enable-code-coverage
+      run: swift test --enable-code-coverage  --disable-xctest
