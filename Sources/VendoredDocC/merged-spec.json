@@ -1,38 +1,154 @@
 {
-  "openapi": "3.0.3",
+  "openapi": "3.1.0",
   "info": {
-    "description": "Specification of the DocC assets.json digest file.",
-    "version": "0.1.0",
-    "title": "Assets"
+    "description": "Specification of the Swift-DocC Index.json file.",
+    "version": "0.1.2",
+    "title": "RenderIndex"
   },
   "paths": {},
   "components": {
     "schemas": {
-      "Assets": {
+      "RenderIndex": {
+        "description": "maps to https://github.com/swiftlang/swift-docc/blob/main/Sources/SwiftDocC/Indexing/RenderIndexJSON/RenderIndex.swift#L24.",
         "type": "object",
         "required": [
-          "images",
-          "videos",
-          "downloads"
+          "schemaVersion",
+          "interfaceLanguages",
+          "includedArchiveIdentifiers"
         ],
         "properties": {
-          "images": {
-            "type": "array",
-            "items": {
+          "schemaVersion": {
+            "$ref": "#/components/schemas/SchemaVersion"
+          },
+          "interfaceLanguages": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Node"
+              }
+            }
+          },
+          "references": {
+            "type": "object",
+            "additionalProperties": {
               "$ref": "#/components/schemas/ImageRenderReference"
             }
           },
-          "videos": {
+          "includedArchiveIdentifiers": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/VideoRenderReference"
+              "type": "string"
             }
+          }
+        }
+      },
+      "Node": {
+        "description": "maps to https://github.com/swiftlang/swift-docc/blob/main/Sources/SwiftDocC/Indexing/RenderIndexJSON/RenderIndex.swift#L117.",
+        "type": "object",
+        "required": [
+          "title",
+          "deprecated",
+          "external",
+          "beta"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
           },
-          "downloads": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "article",
+              "associatedtype",
+              "buildSetting",
+              "case",
+              "collection",
+              "class",
+              "container",
+              "dictionarySymbol",
+              "enum",
+              "extension",
+              "func",
+              "groupMarker",
+              "httpRequest",
+              "init",
+              "languageGroup",
+              "learn",
+              "macro",
+              "method",
+              "module",
+              "op",
+              "overview",
+              "project",
+              "property",
+              "propertyListKey",
+              "propertyListKeyReference",
+              "protocol",
+              "resources",
+              "root",
+              "sampleCode",
+              "section",
+              "struct",
+              "subscript",
+              "symbol",
+              "typealias",
+              "union",
+              "var"
+            ]
+          },
+          "path": {
+            "type": "string"
+          },
+          "deprecated": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "default": "false"
+          },
+          "external": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "default": "false"
+          },
+          "beta": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "default": "false"
+          },
+          "icon": {
+            "type": "string",
+            "format": "reference(ImageRenderReference)"
+          },
+          "children": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/DownloadRenderReference"
+              "$ref": "#/components/schemas/Node"
             }
+          }
+        }
+      },
+      "SchemaVersion": {
+        "type": "object",
+        "required": [
+          "major",
+          "minor",
+          "patch"
+        ],
+        "properties": {
+          "major": {
+            "type": "integer"
+          },
+          "minor": {
+            "type": "integer"
+          },
+          "patch": {
+            "type": "integer"
           }
         }
       },
@@ -75,6 +191,95 @@
           "url": {
             "type": "string"
           },
+          "svgID": {
+            "type": "string",
+            "description": "The ID attribute for the image that should be rendered in the SVG file represented by this variant."
+          },
+          "traits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RenderReferenceVariantTrait"
+            }
+          }
+        }
+      },
+      "RenderReferenceVariantTrait": {
+        "type": "string",
+        "enum": [
+          "1x",
+          "2x",
+          "3x",
+          "light",
+          "dark"
+        ]
+      },
+      "Assets": {
+        "type": "object",
+        "required": [
+          "images",
+          "videos",
+          "downloads"
+        ],
+        "properties": {
+          "images": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImageRenderReference1"
+            }
+          },
+          "videos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VideoRenderReference"
+            }
+          },
+          "downloads": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DownloadRenderReference"
+            }
+          }
+        }
+      },
+      "ImageRenderReference1": {
+        "type": "object",
+        "required": [
+          "type",
+          "identifier",
+          "variants"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "image"
+            ]
+          },
+          "alt": {
+            "type": "string",
+            "nullable": true
+          },
+          "identifier": {
+            "type": "string"
+          },
+          "variants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RenderReferenceVariant1"
+            }
+          }
+        }
+      },
+      "RenderReferenceVariant1": {
+        "type": "object",
+        "required": [
+          "url",
+          "traits"
+        ],
+        "properties": {
+          "url": {
+            "type": "string"
+          },
           "size": {
             "$ref": "#/components/schemas/RenderReferenceVariantSize"
           },
@@ -100,16 +305,6 @@
             "type": "integer"
           }
         }
-      },
-      "RenderReferenceVariantTrait": {
-        "type": "string",
-        "enum": [
-          "1x",
-          "2x",
-          "3x",
-          "light",
-          "dark"
-        ]
       },
       "VideoRenderReference": {
         "type": "object",
@@ -139,7 +334,7 @@
           "variants": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RenderReferenceVariant3"
+              "$ref": "#/components/schemas/RenderReferenceVariant1"
             }
           }
         }
@@ -1028,10 +1223,10 @@
       "RenderReference": {
         "oneOf": [
           {
-            "$ref": "#/components/schemas/ImageRenderReference1"
+            "$ref": "#/components/schemas/ImageRenderReference"
           },
           {
-            "$ref": "#/components/schemas/VideoRenderReference"
+            "$ref": "#/components/schemas/VideoRenderReference1"
           },
           {
             "$ref": "#/components/schemas/FileRenderReference"
@@ -1088,7 +1283,7 @@
           }
         }
       },
-      "ImageRenderReference1": {
+      "VideoRenderReference1": {
         "type": "object",
         "required": [
           "type",
@@ -1099,7 +1294,7 @@
           "type": {
             "type": "string",
             "enum": [
-              "image"
+              "video"
             ]
           },
           "alt": {
@@ -1109,32 +1304,14 @@
           "identifier": {
             "type": "string"
           },
+          "poster": {
+            "type": "string",
+            "nullable": true
+          },
           "variants": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RenderReferenceVariant1"
-            }
-          }
-        }
-      },
-      "RenderReferenceVariant1": {
-        "type": "object",
-        "required": [
-          "url",
-          "traits"
-        ],
-        "properties": {
-          "url": {
-            "type": "string"
-          },
-          "svgID": {
-            "type": "string",
-            "description": "The ID attribute for the image that should be rendered in the SVG file represented by this variant."
-          },
-          "traits": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RenderReferenceVariantTrait"
+              "$ref": "#/components/schemas/RenderReferenceVariant"
             }
           }
         }
@@ -1490,6 +1667,7 @@
       },
       "Metadata": {
         "type": "object",
+        "description": "maps to Maps to https://github.com/swiftlang/swift-docc/blob/main/Sources/SwiftDocC/Model/BuildMetadata.swift#L14",
         "required": [
           "bundleDisplayName",
           "bundleID",
@@ -1503,11 +1681,12 @@
             "type": "string"
           },
           "schemaVersion": {
-            "$ref": "#/components/schemas/SchemaVersion"
+            "$ref": "#/components/schemas/SchemaVersion1"
           }
         }
       },
-      "SchemaVersion": {
+      "SchemaVersion1": {
+        "description": "A version that follows the [Semantic Versioning](https://semver.org) specification. Maps to https: https://github.com/swiftlang/swift-docc/blob/main/Sources/SwiftDocC/Model/Rendering/SemanticVersion.swift#L14",
         "type": "object",
         "required": [
           "major",
@@ -1523,167 +1702,14 @@
           },
           "patch": {
             "type": "integer"
-          }
-        }
-      },
-      "RenderIndex": {
-        "type": "object",
-        "required": [
-          "schemaVersion",
-          "interfaceLanguages"
-        ],
-        "properties": {
-          "schemaVersion": {
-            "$ref": "#/components/schemas/SchemaVersion"
           },
-          "interfaceLanguages": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Node"
-              }
-            }
-          },
-          "references": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/ImageRenderReference2"
-            }
-          },
-          "includedArchiveIdentifiers": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "Node": {
-        "type": "object",
-        "required": [
-          "title"
-        ],
-        "properties": {
-          "title": {
-            "type": "string"
-          },
-          "type": {
+          "prerelease": {
             "type": "string",
-            "enum": [
-              "article",
-              "associatedtype",
-              "buildSetting",
-              "case",
-              "collection",
-              "class",
-              "container",
-              "dictionarySymbol",
-              "enum",
-              "extension",
-              "func",
-              "groupMarker",
-              "httpRequest",
-              "init",
-              "languageGroup",
-              "learn",
-              "macro",
-              "method",
-              "module",
-              "op",
-              "overview",
-              "project",
-              "property",
-              "propertyListKey",
-              "propertyListKeyReference",
-              "protocol",
-              "resources",
-              "root",
-              "sampleCode",
-              "section",
-              "struct",
-              "subscript",
-              "symbol",
-              "typealias",
-              "union",
-              "var"
-            ]
+            "description": "The optional prerelease version component, which may contain non-numeric characters."
           },
-          "path": {
-            "type": "string"
-          },
-          "deprecated": {
-            "type": "boolean",
-            "default": "false"
-          },
-          "external": {
-            "type": "boolean",
-            "default": "false"
-          },
-          "beta": {
-            "type": "boolean",
-            "default": "false"
-          },
-          "icon": {
+          "buildMetadata": {
             "type": "string",
-            "format": "reference(ImageRenderReference)"
-          },
-          "children": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Node"
-            }
-          }
-        }
-      },
-      "ImageRenderReference2": {
-        "type": "object",
-        "required": [
-          "type",
-          "identifier",
-          "variants"
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": [
-              "image"
-            ]
-          },
-          "alt": {
-            "type": "string",
-            "nullable": true
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "variants": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RenderReferenceVariant2"
-            }
-          }
-        }
-      },
-      "RenderReferenceVariant2": {
-        "type": "object",
-        "required": [
-          "url",
-          "traits"
-        ],
-        "properties": {
-          "url": {
-            "type": "string"
-          },
-          "svgID": {
-            "type": "string",
-            "description": "The ID attribute for the image that should be rendered in the SVG file represented by this variant."
-          },
-          "traits": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RenderReferenceVariantTrait"
-            }
+            "description": "Optional additional build metadata."
           }
         }
       },
@@ -2910,10 +2936,10 @@
       "RenderReference1": {
         "oneOf": [
           {
-            "$ref": "#/components/schemas/ImageRenderReference3"
+            "$ref": "#/components/schemas/ImageRenderReference"
           },
           {
-            "$ref": "#/components/schemas/VideoRenderReference"
+            "$ref": "#/components/schemas/VideoRenderReference2"
           },
           {
             "$ref": "#/components/schemas/FileRenderReference"
@@ -2938,7 +2964,7 @@
           }
         ]
       },
-      "ImageRenderReference3": {
+      "VideoRenderReference2": {
         "type": "object",
         "required": [
           "type",
@@ -2949,7 +2975,7 @@
           "type": {
             "type": "string",
             "enum": [
-              "image"
+              "video"
             ]
           },
           "alt": {
@@ -2959,32 +2985,14 @@
           "identifier": {
             "type": "string"
           },
+          "poster": {
+            "type": "string",
+            "nullable": true
+          },
           "variants": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RenderReferenceVariant3"
-            }
-          }
-        }
-      },
-      "RenderReferenceVariant3": {
-        "type": "object",
-        "required": [
-          "url",
-          "traits"
-        ],
-        "properties": {
-          "url": {
-            "type": "string"
-          },
-          "svgID": {
-            "type": "string",
-            "description": "The ID attribute for the image that should be rendered in the SVG file represented by this variant."
-          },
-          "traits": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RenderReferenceVariantTrait"
+              "$ref": "#/components/schemas/RenderReferenceVariant"
             }
           }
         }

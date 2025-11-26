@@ -1,6 +1,9 @@
 {
   "inputs": [
     {
+      "inputFile": "./RenderIndex.spec.json",
+    },
+    {
       "inputFile": "./Assets.json",
     },
     {
@@ -17,9 +20,6 @@
     },
     {
       "inputFile": "./Metadata.json",
-    },
-    {
-      "inputFile": "./RenderIndex.spec.json",
     },
     {
       "inputFile": "./RenderNode.spec.json",

@@ -1,5 +1,5 @@
 {
-    "openapi": "3.0.0",
+    "openapi": "3.1.0",
     "info": {
         "description": "Specification of the Swift-DocC Index.json file.",
         "version": "0.1.2",
@@ -9,10 +9,12 @@
     "components": {
         "schemas": {
             "RenderIndex": {
+                "description": "maps to https://github.com/swiftlang/swift-docc/blob/main/Sources/SwiftDocC/Indexing/RenderIndexJSON/RenderIndex.swift#L24.",
                 "type": "object",
                 "required": [
                     "schemaVersion",
-                    "interfaceLanguages"
+                    "interfaceLanguages",
+                    "includedArchiveIdentifiers"
                 ],
                 "properties": {
                     "schemaVersion": {
@@ -42,9 +44,13 @@
                 }
             },
             "Node": {
+                "description": "maps to https://github.com/swiftlang/swift-docc/blob/main/Sources/SwiftDocC/Indexing/RenderIndexJSON/RenderIndex.swift#L117.",
                 "type": "object",
                 "required": [
-                    "title"
+                    "title",
+                    "deprecated",
+                    "external",
+                    "beta"
                 ],
                 "properties": {
                     "title": {
@@ -95,15 +101,15 @@
                         "type": "string"
                     },
                     "deprecated": {
-                        "type": "boolean",
+                        "type": ["boolean", "null"],
                         "default": "false"
                     },
                     "external": {
-                        "type": "boolean",
+                        "type": ["boolean", "null"],
                         "default": "false"
                     },
                     "beta": {
-                        "type": "boolean",
+                        "type": ["boolean", "null"],
                         "default": "false"
                     },
                     "icon": {

@@ -24,33 +24,352 @@ package enum Servers {}
 package enum Components {
   /// Types generated from the `#/components/schemas` section of the OpenAPI document.
   package enum Schemas {
-    /// - Remark: Generated from `#/components/schemas/Assets`.
-    package struct Assets: Codable, Hashable, Sendable {
-      /// - Remark: Generated from `#/components/schemas/Assets/images`.
-      package var images: [Components.Schemas.ImageRenderReference]
-      /// - Remark: Generated from `#/components/schemas/Assets/videos`.
-      package var videos: [Components.Schemas.VideoRenderReference]
-      /// - Remark: Generated from `#/components/schemas/Assets/downloads`.
-      package var downloads: [Components.Schemas.DownloadRenderReference]
-      /// Creates a new `Assets`.
+    /// maps to https://github.com/swiftlang/swift-docc/blob/main/Sources/SwiftDocC/Indexing/RenderIndexJSON/RenderIndex.swift#L24.
+    ///
+    /// - Remark: Generated from `#/components/schemas/RenderIndex`.
+    package struct RenderIndex: Codable, Hashable, Sendable {
+      /// - Remark: Generated from `#/components/schemas/RenderIndex/schemaVersion`.
+      package var schemaVersion: Components.Schemas.SchemaVersion
+      /// - Remark: Generated from `#/components/schemas/RenderIndex/interfaceLanguages`.
+      package struct InterfaceLanguagesPayload: Codable, Hashable, Sendable {
+        /// A container of undocumented properties.
+        package var additionalProperties: [String: [Components.Schemas.Node]]
+        /// Creates a new `InterfaceLanguagesPayload`.
+        ///
+        /// - Parameters:
+        ///   - additionalProperties: A container of undocumented properties.
+        package init(additionalProperties: [String: [Components.Schemas.Node]] = .init()) {
+          self.additionalProperties = additionalProperties
+        }
+        package init(from decoder: any Decoder) throws {
+          additionalProperties = try decoder.decodeAdditionalProperties(knownKeys: [])
+        }
+        package func encode(to encoder: any Encoder) throws {
+          try encoder.encodeAdditionalProperties(additionalProperties)
+        }
+      }
+      /// - Remark: Generated from `#/components/schemas/RenderIndex/interfaceLanguages`.
+      package var interfaceLanguages: Components.Schemas.RenderIndex.InterfaceLanguagesPayload
+      /// - Remark: Generated from `#/components/schemas/RenderIndex/references`.
+      package struct ReferencesPayload: Codable, Hashable, Sendable {
+        /// A container of undocumented properties.
+        package var additionalProperties: [String: Components.Schemas.ImageRenderReference]
+        /// Creates a new `ReferencesPayload`.
+        ///
+        /// - Parameters:
+        ///   - additionalProperties: A container of undocumented properties.
+        package init(
+          additionalProperties: [String: Components.Schemas.ImageRenderReference] = .init()
+        ) {
+          self.additionalProperties = additionalProperties
+        }
+        package init(from decoder: any Decoder) throws {
+          additionalProperties = try decoder.decodeAdditionalProperties(knownKeys: [])
+        }
+        package func encode(to encoder: any Encoder) throws {
+          try encoder.encodeAdditionalProperties(additionalProperties)
+        }
+      }
+      /// - Remark: Generated from `#/components/schemas/RenderIndex/references`.
+      package var references: Components.Schemas.RenderIndex.ReferencesPayload?
+      /// - Remark: Generated from `#/components/schemas/RenderIndex/includedArchiveIdentifiers`.
+      package var includedArchiveIdentifiers: [Swift.String]
+      /// Creates a new `RenderIndex`.
       ///
       /// - Parameters:
-      ///   - images:
-      ///   - videos:
-      ///   - downloads:
+      ///   - schemaVersion:
+      ///   - interfaceLanguages:
+      ///   - references:
+      ///   - includedArchiveIdentifiers:
       package init(
-        images: [Components.Schemas.ImageRenderReference],
-        videos: [Components.Schemas.VideoRenderReference],
-        downloads: [Components.Schemas.DownloadRenderReference]
+        schemaVersion: Components.Schemas.SchemaVersion,
+        interfaceLanguages: Components.Schemas.RenderIndex.InterfaceLanguagesPayload,
+        references: Components.Schemas.RenderIndex.ReferencesPayload? = nil,
+        includedArchiveIdentifiers: [Swift.String]
       ) {
-        self.images = images
-        self.videos = videos
-        self.downloads = downloads
+        self.schemaVersion = schemaVersion
+        self.interfaceLanguages = interfaceLanguages
+        self.references = references
+        self.includedArchiveIdentifiers = includedArchiveIdentifiers
       }
       package enum CodingKeys: String, CodingKey {
-        case images
-        case videos
-        case downloads
+        case schemaVersion
+        case interfaceLanguages
+        case references
+        case includedArchiveIdentifiers
+      }
+    }
+    /// maps to https://github.com/swiftlang/swift-docc/blob/main/Sources/SwiftDocC/Indexing/RenderIndexJSON/RenderIndex.swift#L117.
+    ///
+    /// - Remark: Generated from `#/components/schemas/Node`.
+    package struct Node: Codable, Hashable, Sendable {
+      /// - Remark: Generated from `#/components/schemas/Node/title`.
+      package var title: Swift.String {
+        get {
+          self.storage.value.title
+        }
+        _modify {
+          yield &self.storage.value.title
+        }
+      }
+      /// - Remark: Generated from `#/components/schemas/Node/type`.
+      @frozen package enum _TypePayload: String, Codable, Hashable, Sendable, CaseIterable {
+        case article = "article"
+        case _associatedtype = "associatedtype"
+        case buildSetting = "buildSetting"
+        case _case = "case"
+        case collection = "collection"
+        case _class = "class"
+        case container = "container"
+        case dictionarySymbol = "dictionarySymbol"
+        case _enum = "enum"
+        case _extension = "extension"
+        case _func = "func"
+        case groupMarker = "groupMarker"
+        case httpRequest = "httpRequest"
+        case _init = "init"
+        case languageGroup = "languageGroup"
+        case learn = "learn"
+        case macro = "macro"
+        case method = "method"
+        case module = "module"
+        case op = "op"
+        case overview = "overview"
+        case project = "project"
+        case property = "property"
+        case propertyListKey = "propertyListKey"
+        case propertyListKeyReference = "propertyListKeyReference"
+        case _protocol = "protocol"
+        case resources = "resources"
+        case root = "root"
+        case sampleCode = "sampleCode"
+        case section = "section"
+        case _struct = "struct"
+        case _subscript = "subscript"
+        case symbol = "symbol"
+        case _typealias = "typealias"
+        case union = "union"
+        case _var = "var"
+      }
+      /// - Remark: Generated from `#/components/schemas/Node/type`.
+      package var _type: Components.Schemas.Node._TypePayload? {
+        get {
+          self.storage.value._type
+        }
+        _modify {
+          yield &self.storage.value._type
+        }
+      }
+      /// - Remark: Generated from `#/components/schemas/Node/path`.
+      package var path: Swift.String? {
+        get {
+          self.storage.value.path
+        }
+        _modify {
+          yield &self.storage.value.path
+        }
+      }
+      /// - Remark: Generated from `#/components/schemas/Node/deprecated`.
+      package var deprecated: Swift.Bool? {
+        get {
+          self.storage.value.deprecated
+        }
+        _modify {
+          yield &self.storage.value.deprecated
+        }
+      }
+      /// - Remark: Generated from `#/components/schemas/Node/external`.
+      package var external: Swift.Bool? {
+        get {
+          self.storage.value.external
+        }
+        _modify {
+          yield &self.storage.value.external
+        }
+      }
+      /// - Remark: Generated from `#/components/schemas/Node/beta`.
+      package var beta: Swift.Bool? {
+        get {
+          self.storage.value.beta
+        }
+        _modify {
+          yield &self.storage.value.beta
+        }
+      }
+      /// - Remark: Generated from `#/components/schemas/Node/icon`.
+      package var icon: Swift.String? {
+        get {
+          self.storage.value.icon
+        }
+        _modify {
+          yield &self.storage.value.icon
+        }
+      }
+      /// - Remark: Generated from `#/components/schemas/Node/children`.
+      package var children: [Components.Schemas.Node]? {
+        get {
+          self.storage.value.children
+        }
+        _modify {
+          yield &self.storage.value.children
+        }
+      }
+      /// Creates a new `Node`.
+      ///
+      /// - Parameters:
+      ///   - title:
+      ///   - _type:
+      ///   - path:
+      ///   - deprecated:
+      ///   - external:
+      ///   - beta:
+      ///   - icon:
+      ///   - children:
+      package init(
+        title: Swift.String,
+        _type: Components.Schemas.Node._TypePayload? = nil,
+        path: Swift.String? = nil,
+        deprecated: Swift.Bool? = nil,
+        external: Swift.Bool? = nil,
+        beta: Swift.Bool? = nil,
+        icon: Swift.String? = nil,
+        children: [Components.Schemas.Node]? = nil
+      ) {
+        self.storage = .init(
+          value: .init(
+            title: title,
+            _type: _type,
+            path: path,
+            deprecated: deprecated,
+            external: external,
+            beta: beta,
+            icon: icon,
+            children: children
+          ))
+      }
+      package enum CodingKeys: String, CodingKey {
+        case title
+        case _type = "type"
+        case path
+        case deprecated
+        case external
+        case beta
+        case icon
+        case children
+      }
+      package init(from decoder: any Decoder) throws {
+        self.storage = try .init(from: decoder)
+      }
+      package func encode(to encoder: any Encoder) throws {
+        try self.storage.encode(to: encoder)
+      }
+      /// Internal reference storage to allow type recursion.
+      private var storage: OpenAPIRuntime.CopyOnWriteBox<Storage>
+      private struct Storage: Codable, Hashable, Sendable {
+        /// - Remark: Generated from `#/components/schemas/Node/title`.
+        var title: Swift.String
+        /// - Remark: Generated from `#/components/schemas/Node/type`.
+        enum _TypePayload: String, Codable, Hashable, Sendable, CaseIterable {
+          case article = "article"
+          case _associatedtype = "associatedtype"
+          case buildSetting = "buildSetting"
+          case _case = "case"
+          case collection = "collection"
+          case _class = "class"
+          case container = "container"
+          case dictionarySymbol = "dictionarySymbol"
+          case _enum = "enum"
+          case _extension = "extension"
+          case _func = "func"
+          case groupMarker = "groupMarker"
+          case httpRequest = "httpRequest"
+          case _init = "init"
+          case languageGroup = "languageGroup"
+          case learn = "learn"
+          case macro = "macro"
+          case method = "method"
+          case module = "module"
+          case op = "op"
+          case overview = "overview"
+          case project = "project"
+          case property = "property"
+          case propertyListKey = "propertyListKey"
+          case propertyListKeyReference = "propertyListKeyReference"
+          case _protocol = "protocol"
+          case resources = "resources"
+          case root = "root"
+          case sampleCode = "sampleCode"
+          case section = "section"
+          case _struct = "struct"
+          case _subscript = "subscript"
+          case symbol = "symbol"
+          case _typealias = "typealias"
+          case union = "union"
+          case _var = "var"
+        }
+        /// - Remark: Generated from `#/components/schemas/Node/type`.
+        var _type: Components.Schemas.Node._TypePayload?
+        /// - Remark: Generated from `#/components/schemas/Node/path`.
+        var path: Swift.String?
+        /// - Remark: Generated from `#/components/schemas/Node/deprecated`.
+        var deprecated: Swift.Bool?
+        /// - Remark: Generated from `#/components/schemas/Node/external`.
+        var external: Swift.Bool?
+        /// - Remark: Generated from `#/components/schemas/Node/beta`.
+        var beta: Swift.Bool?
+        /// - Remark: Generated from `#/components/schemas/Node/icon`.
+        var icon: Swift.String?
+        /// - Remark: Generated from `#/components/schemas/Node/children`.
+        var children: [Components.Schemas.Node]?
+        init(
+          title: Swift.String,
+          _type: Components.Schemas.Node._TypePayload? = nil,
+          path: Swift.String? = nil,
+          deprecated: Swift.Bool? = nil,
+          external: Swift.Bool? = nil,
+          beta: Swift.Bool? = nil,
+          icon: Swift.String? = nil,
+          children: [Components.Schemas.Node]? = nil
+        ) {
+          self.title = title
+          self._type = _type
+          self.path = path
+          self.deprecated = deprecated
+          self.external = external
+          self.beta = beta
+          self.icon = icon
+          self.children = children
+        }
+        typealias CodingKeys = Components.Schemas.Node.CodingKeys
+      }
+    }
+    /// - Remark: Generated from `#/components/schemas/SchemaVersion`.
+    package struct SchemaVersion: Codable, Hashable, Sendable {
+      /// - Remark: Generated from `#/components/schemas/SchemaVersion/major`.
+      package var major: Swift.Int
+      /// - Remark: Generated from `#/components/schemas/SchemaVersion/minor`.
+      package var minor: Swift.Int
+      /// - Remark: Generated from `#/components/schemas/SchemaVersion/patch`.
+      package var patch: Swift.Int
+      /// Creates a new `SchemaVersion`.
+      ///
+      /// - Parameters:
+      ///   - major:
+      ///   - minor:
+      ///   - patch:
+      package init(
+        major: Swift.Int,
+        minor: Swift.Int,
+        patch: Swift.Int
+      ) {
+        self.major = major
+        self.minor = minor
+        self.patch = patch
+      }
+      package enum CodingKeys: String, CodingKey {
+        case major
+        case minor
+        case patch
       }
     }
     /// - Remark: Generated from `#/components/schemas/ImageRenderReference`.
@@ -96,11 +415,119 @@ package enum Components {
     package struct RenderReferenceVariant: Codable, Hashable, Sendable {
       /// - Remark: Generated from `#/components/schemas/RenderReferenceVariant/url`.
       package var url: Swift.String
-      /// - Remark: Generated from `#/components/schemas/RenderReferenceVariant/size`.
-      package var size: Components.Schemas.RenderReferenceVariantSize?
+      /// The ID attribute for the image that should be rendered in the SVG file represented by this variant.
+      ///
+      /// - Remark: Generated from `#/components/schemas/RenderReferenceVariant/svgID`.
+      package var svgID: Swift.String?
       /// - Remark: Generated from `#/components/schemas/RenderReferenceVariant/traits`.
       package var traits: [Components.Schemas.RenderReferenceVariantTrait]
       /// Creates a new `RenderReferenceVariant`.
+      ///
+      /// - Parameters:
+      ///   - url:
+      ///   - svgID: The ID attribute for the image that should be rendered in the SVG file represented by this variant.
+      ///   - traits:
+      package init(
+        url: Swift.String,
+        svgID: Swift.String? = nil,
+        traits: [Components.Schemas.RenderReferenceVariantTrait]
+      ) {
+        self.url = url
+        self.svgID = svgID
+        self.traits = traits
+      }
+      package enum CodingKeys: String, CodingKey {
+        case url
+        case svgID
+        case traits
+      }
+    }
+    /// - Remark: Generated from `#/components/schemas/RenderReferenceVariantTrait`.
+    @frozen
+    package enum RenderReferenceVariantTrait: String, Codable, Hashable, Sendable, CaseIterable {
+      case _1x = "1x"
+      case _2x = "2x"
+      case _3x = "3x"
+      case light = "light"
+      case dark = "dark"
+    }
+    /// - Remark: Generated from `#/components/schemas/Assets`.
+    package struct Assets: Codable, Hashable, Sendable {
+      /// - Remark: Generated from `#/components/schemas/Assets/images`.
+      package var images: [Components.Schemas.ImageRenderReference1]
+      /// - Remark: Generated from `#/components/schemas/Assets/videos`.
+      package var videos: [Components.Schemas.VideoRenderReference]
+      /// - Remark: Generated from `#/components/schemas/Assets/downloads`.
+      package var downloads: [Components.Schemas.DownloadRenderReference]
+      /// Creates a new `Assets`.
+      ///
+      /// - Parameters:
+      ///   - images:
+      ///   - videos:
+      ///   - downloads:
+      package init(
+        images: [Components.Schemas.ImageRenderReference1],
+        videos: [Components.Schemas.VideoRenderReference],
+        downloads: [Components.Schemas.DownloadRenderReference]
+      ) {
+        self.images = images
+        self.videos = videos
+        self.downloads = downloads
+      }
+      package enum CodingKeys: String, CodingKey {
+        case images
+        case videos
+        case downloads
+      }
+    }
+    /// - Remark: Generated from `#/components/schemas/ImageRenderReference1`.
+    package struct ImageRenderReference1: Codable, Hashable, Sendable {
+      /// - Remark: Generated from `#/components/schemas/ImageRenderReference1/type`.
+      @frozen package enum _TypePayload: String, Codable, Hashable, Sendable, CaseIterable {
+        case image = "image"
+      }
+      /// - Remark: Generated from `#/components/schemas/ImageRenderReference1/type`.
+      package var _type: Components.Schemas.ImageRenderReference1._TypePayload
+      /// - Remark: Generated from `#/components/schemas/ImageRenderReference1/alt`.
+      package var alt: Swift.String?
+      /// - Remark: Generated from `#/components/schemas/ImageRenderReference1/identifier`.
+      package var identifier: Swift.String
+      /// - Remark: Generated from `#/components/schemas/ImageRenderReference1/variants`.
+      package var variants: [Components.Schemas.RenderReferenceVariant1]
+      /// Creates a new `ImageRenderReference1`.
+      ///
+      /// - Parameters:
+      ///   - _type:
+      ///   - alt:
+      ///   - identifier:
+      ///   - variants:
+      package init(
+        _type: Components.Schemas.ImageRenderReference1._TypePayload,
+        alt: Swift.String? = nil,
+        identifier: Swift.String,
+        variants: [Components.Schemas.RenderReferenceVariant1]
+      ) {
+        self._type = _type
+        self.alt = alt
+        self.identifier = identifier
+        self.variants = variants
+      }
+      package enum CodingKeys: String, CodingKey {
+        case _type = "type"
+        case alt
+        case identifier
+        case variants
+      }
+    }
+    /// - Remark: Generated from `#/components/schemas/RenderReferenceVariant1`.
+    package struct RenderReferenceVariant1: Codable, Hashable, Sendable {
+      /// - Remark: Generated from `#/components/schemas/RenderReferenceVariant1/url`.
+      package var url: Swift.String
+      /// - Remark: Generated from `#/components/schemas/RenderReferenceVariant1/size`.
+      package var size: Components.Schemas.RenderReferenceVariantSize?
+      /// - Remark: Generated from `#/components/schemas/RenderReferenceVariant1/traits`.
+      package var traits: [Components.Schemas.RenderReferenceVariantTrait]
+      /// Creates a new `RenderReferenceVariant1`.
       ///
       /// - Parameters:
       ///   - url:
@@ -144,15 +571,6 @@ package enum Components {
         case height
       }
     }
-    /// - Remark: Generated from `#/components/schemas/RenderReferenceVariantTrait`.
-    @frozen
-    package enum RenderReferenceVariantTrait: String, Codable, Hashable, Sendable, CaseIterable {
-      case _1x = "1x"
-      case _2x = "2x"
-      case _3x = "3x"
-      case light = "light"
-      case dark = "dark"
-    }
     /// - Remark: Generated from `#/components/schemas/VideoRenderReference`.
     package struct VideoRenderReference: Codable, Hashable, Sendable {
       /// - Remark: Generated from `#/components/schemas/VideoRenderReference/type`.
@@ -168,7 +586,7 @@ package enum Components {
       /// - Remark: Generated from `#/components/schemas/VideoRenderReference/poster`.
       package var poster: Swift.String?
       /// - Remark: Generated from `#/components/schemas/VideoRenderReference/variants`.
-      package var variants: [Components.Schemas.RenderReferenceVariant3]
+      package var variants: [Components.Schemas.RenderReferenceVariant1]
       /// Creates a new `VideoRenderReference`.
       ///
       /// - Parameters:
@@ -182,7 +600,7 @@ package enum Components {
         alt: Swift.String? = nil,
         identifier: Swift.String,
         poster: Swift.String? = nil,
-        variants: [Components.Schemas.RenderReferenceVariant3]
+        variants: [Components.Schemas.RenderReferenceVariant1]
       ) {
         self._type = _type
         self.alt = alt
@@ -1690,9 +2108,9 @@ package enum Components {
     /// - Remark: Generated from `#/components/schemas/RenderReference`.
     @frozen package enum RenderReference: Codable, Hashable, Sendable {
       /// - Remark: Generated from `#/components/schemas/RenderReference/case1`.
-      case ImageRenderReference1(Components.Schemas.ImageRenderReference1)
+      case ImageRenderReference(Components.Schemas.ImageRenderReference)
       /// - Remark: Generated from `#/components/schemas/RenderReference/case2`.
-      case VideoRenderReference(Components.Schemas.VideoRenderReference)
+      case VideoRenderReference1(Components.Schemas.VideoRenderReference1)
       /// - Remark: Generated from `#/components/schemas/RenderReference/case3`.
       case FileRenderReference(Components.Schemas.FileRenderReference)
       /// - Remark: Generated from `#/components/schemas/RenderReference/case4`.
@@ -1710,13 +2128,13 @@ package enum Components {
       package init(from decoder: any Decoder) throws {
         var errors: [any Error] = []
         do {
-          self = .ImageRenderReference1(try .init(from: decoder))
+          self = .ImageRenderReference(try .init(from: decoder))
           return
         } catch {
           errors.append(error)
         }
         do {
-          self = .VideoRenderReference(try .init(from: decoder))
+          self = .VideoRenderReference1(try .init(from: decoder))
           return
         } catch {
           errors.append(error)
@@ -1771,9 +2189,9 @@ package enum Components {
       }
       package func encode(to encoder: any Encoder) throws {
         switch self {
-        case .ImageRenderReference1(let value):
+        case .ImageRenderReference(let value):
           try value.encode(to: encoder)
-        case .VideoRenderReference(let value):
+        case .VideoRenderReference1(let value):
           try value.encode(to: encoder)
         case .FileRenderReference(let value):
           try value.encode(to: encoder)
@@ -1837,74 +2255,49 @@ package enum Components {
         case url
       }
     }
-    /// - Remark: Generated from `#/components/schemas/ImageRenderReference1`.
-    package struct ImageRenderReference1: Codable, Hashable, Sendable {
-      /// - Remark: Generated from `#/components/schemas/ImageRenderReference1/type`.
+    /// - Remark: Generated from `#/components/schemas/VideoRenderReference1`.
+    package struct VideoRenderReference1: Codable, Hashable, Sendable {
+      /// - Remark: Generated from `#/components/schemas/VideoRenderReference1/type`.
       @frozen package enum _TypePayload: String, Codable, Hashable, Sendable, CaseIterable {
-        case image = "image"
+        case video = "video"
       }
-      /// - Remark: Generated from `#/components/schemas/ImageRenderReference1/type`.
-      package var _type: Components.Schemas.ImageRenderReference1._TypePayload
-      /// - Remark: Generated from `#/components/schemas/ImageRenderReference1/alt`.
+      /// - Remark: Generated from `#/components/schemas/VideoRenderReference1/type`.
+      package var _type: Components.Schemas.VideoRenderReference1._TypePayload
+      /// - Remark: Generated from `#/components/schemas/VideoRenderReference1/alt`.
       package var alt: Swift.String?
-      /// - Remark: Generated from `#/components/schemas/ImageRenderReference1/identifier`.
+      /// - Remark: Generated from `#/components/schemas/VideoRenderReference1/identifier`.
       package var identifier: Swift.String
-      /// - Remark: Generated from `#/components/schemas/ImageRenderReference1/variants`.
-      package var variants: [Components.Schemas.RenderReferenceVariant1]
-      /// Creates a new `ImageRenderReference1`.
+      /// - Remark: Generated from `#/components/schemas/VideoRenderReference1/poster`.
+      package var poster: Swift.String?
+      /// - Remark: Generated from `#/components/schemas/VideoRenderReference1/variants`.
+      package var variants: [Components.Schemas.RenderReferenceVariant]
+      /// Creates a new `VideoRenderReference1`.
       ///
       /// - Parameters:
       ///   - _type:
       ///   - alt:
       ///   - identifier:
+      ///   - poster:
       ///   - variants:
       package init(
-        _type: Components.Schemas.ImageRenderReference1._TypePayload,
+        _type: Components.Schemas.VideoRenderReference1._TypePayload,
         alt: Swift.String? = nil,
         identifier: Swift.String,
-        variants: [Components.Schemas.RenderReferenceVariant1]
+        poster: Swift.String? = nil,
+        variants: [Components.Schemas.RenderReferenceVariant]
       ) {
         self._type = _type
         self.alt = alt
         self.identifier = identifier
+        self.poster = poster
         self.variants = variants
       }
       package enum CodingKeys: String, CodingKey {
         case _type = "type"
         case alt
         case identifier
+        case poster
         case variants
-      }
-    }
-    /// - Remark: Generated from `#/components/schemas/RenderReferenceVariant1`.
-    package struct RenderReferenceVariant1: Codable, Hashable, Sendable {
-      /// - Remark: Generated from `#/components/schemas/RenderReferenceVariant1/url`.
-      package var url: Swift.String
-      /// The ID attribute for the image that should be rendered in the SVG file represented by this variant.
-      ///
-      /// - Remark: Generated from `#/components/schemas/RenderReferenceVariant1/svgID`.
-      package var svgID: Swift.String?
-      /// - Remark: Generated from `#/components/schemas/RenderReferenceVariant1/traits`.
-      package var traits: [Components.Schemas.RenderReferenceVariantTrait]
-      /// Creates a new `RenderReferenceVariant1`.
-      ///
-      /// - Parameters:
-      ///   - url:
-      ///   - svgID: The ID attribute for the image that should be rendered in the SVG file represented by this variant.
-      ///   - traits:
-      package init(
-        url: Swift.String,
-        svgID: Swift.String? = nil,
-        traits: [Components.Schemas.RenderReferenceVariantTrait]
-      ) {
-        self.url = url
-        self.svgID = svgID
-        self.traits = traits
-      }
-      package enum CodingKeys: String, CodingKey {
-        case url
-        case svgID
-        case traits
       }
     }
     /// - Remark: Generated from `#/components/schemas/FileRenderReference`.
@@ -2400,6 +2793,8 @@ package enum Components {
         case deviceFrame
       }
     }
+    /// maps to Maps to https://github.com/swiftlang/swift-docc/blob/main/Sources/SwiftDocC/Model/BuildMetadata.swift#L14
+    ///
     /// - Remark: Generated from `#/components/schemas/Metadata`.
     package struct Metadata: Codable, Hashable, Sendable {
       /// - Remark: Generated from `#/components/schemas/Metadata/bundleDisplayName`.
@@ -2407,7 +2802,7 @@ package enum Components {
       /// - Remark: Generated from `#/components/schemas/Metadata/bundleID`.
       package var bundleID: Swift.String
       /// - Remark: Generated from `#/components/schemas/Metadata/schemaVersion`.
-      package var schemaVersion: Components.Schemas.SchemaVersion
+      package var schemaVersion: Components.Schemas.SchemaVersion1
       /// Creates a new `Metadata`.
       ///
       /// - Parameters:
@@ -2417,7 +2812,7 @@ package enum Components {
       package init(
         bundleDisplayName: Swift.String,
         bundleID: Swift.String,
-        schemaVersion: Components.Schemas.SchemaVersion
+        schemaVersion: Components.Schemas.SchemaVersion1
       ) {
         self.bundleDisplayName = bundleDisplayName
         self.bundleID = bundleID
@@ -2429,418 +2824,51 @@ package enum Components {
         case schemaVersion
       }
     }
-    /// - Remark: Generated from `#/components/schemas/SchemaVersion`.
-    package struct SchemaVersion: Codable, Hashable, Sendable {
-      /// - Remark: Generated from `#/components/schemas/SchemaVersion/major`.
+    /// A version that follows the [Semantic Versioning](https://semver.org) specification. Maps to https: https://github.com/swiftlang/swift-docc/blob/main/Sources/SwiftDocC/Model/Rendering/SemanticVersion.swift#L14
+    ///
+    /// - Remark: Generated from `#/components/schemas/SchemaVersion1`.
+    package struct SchemaVersion1: Codable, Hashable, Sendable {
+      /// - Remark: Generated from `#/components/schemas/SchemaVersion1/major`.
       package var major: Swift.Int
-      /// - Remark: Generated from `#/components/schemas/SchemaVersion/minor`.
+      /// - Remark: Generated from `#/components/schemas/SchemaVersion1/minor`.
       package var minor: Swift.Int
-      /// - Remark: Generated from `#/components/schemas/SchemaVersion/patch`.
+      /// - Remark: Generated from `#/components/schemas/SchemaVersion1/patch`.
       package var patch: Swift.Int
-      /// Creates a new `SchemaVersion`.
+      /// The optional prerelease version component, which may contain non-numeric characters.
+      ///
+      /// - Remark: Generated from `#/components/schemas/SchemaVersion1/prerelease`.
+      package var prerelease: Swift.String?
+      /// Optional additional build metadata.
+      ///
+      /// - Remark: Generated from `#/components/schemas/SchemaVersion1/buildMetadata`.
+      package var buildMetadata: Swift.String?
+      /// Creates a new `SchemaVersion1`.
       ///
       /// - Parameters:
       ///   - major:
       ///   - minor:
       ///   - patch:
+      ///   - prerelease: The optional prerelease version component, which may contain non-numeric characters.
+      ///   - buildMetadata: Optional additional build metadata.
       package init(
         major: Swift.Int,
         minor: Swift.Int,
-        patch: Swift.Int
+        patch: Swift.Int,
+        prerelease: Swift.String? = nil,
+        buildMetadata: Swift.String? = nil
       ) {
         self.major = major
         self.minor = minor
         self.patch = patch
+        self.prerelease = prerelease
+        self.buildMetadata = buildMetadata
       }
       package enum CodingKeys: String, CodingKey {
         case major
         case minor
         case patch
-      }
-    }
-    /// - Remark: Generated from `#/components/schemas/RenderIndex`.
-    package struct RenderIndex: Codable, Hashable, Sendable {
-      /// - Remark: Generated from `#/components/schemas/RenderIndex/schemaVersion`.
-      package var schemaVersion: Components.Schemas.SchemaVersion
-      /// - Remark: Generated from `#/components/schemas/RenderIndex/interfaceLanguages`.
-      package struct InterfaceLanguagesPayload: Codable, Hashable, Sendable {
-        /// A container of undocumented properties.
-        package var additionalProperties: [String: [Components.Schemas.Node]]
-        /// Creates a new `InterfaceLanguagesPayload`.
-        ///
-        /// - Parameters:
-        ///   - additionalProperties: A container of undocumented properties.
-        package init(additionalProperties: [String: [Components.Schemas.Node]] = .init()) {
-          self.additionalProperties = additionalProperties
-        }
-        package init(from decoder: any Decoder) throws {
-          additionalProperties = try decoder.decodeAdditionalProperties(knownKeys: [])
-        }
-        package func encode(to encoder: any Encoder) throws {
-          try encoder.encodeAdditionalProperties(additionalProperties)
-        }
-      }
-      /// - Remark: Generated from `#/components/schemas/RenderIndex/interfaceLanguages`.
-      package var interfaceLanguages: Components.Schemas.RenderIndex.InterfaceLanguagesPayload
-      /// - Remark: Generated from `#/components/schemas/RenderIndex/references`.
-      package struct ReferencesPayload: Codable, Hashable, Sendable {
-        /// A container of undocumented properties.
-        package var additionalProperties: [String: Components.Schemas.ImageRenderReference2]
-        /// Creates a new `ReferencesPayload`.
-        ///
-        /// - Parameters:
-        ///   - additionalProperties: A container of undocumented properties.
-        package init(
-          additionalProperties: [String: Components.Schemas.ImageRenderReference2] = .init()
-        ) {
-          self.additionalProperties = additionalProperties
-        }
-        package init(from decoder: any Decoder) throws {
-          additionalProperties = try decoder.decodeAdditionalProperties(knownKeys: [])
-        }
-        package func encode(to encoder: any Encoder) throws {
-          try encoder.encodeAdditionalProperties(additionalProperties)
-        }
-      }
-      /// - Remark: Generated from `#/components/schemas/RenderIndex/references`.
-      package var references: Components.Schemas.RenderIndex.ReferencesPayload?
-      /// - Remark: Generated from `#/components/schemas/RenderIndex/includedArchiveIdentifiers`.
-      package var includedArchiveIdentifiers: [Swift.String]?
-      /// Creates a new `RenderIndex`.
-      ///
-      /// - Parameters:
-      ///   - schemaVersion:
-      ///   - interfaceLanguages:
-      ///   - references:
-      ///   - includedArchiveIdentifiers:
-      package init(
-        schemaVersion: Components.Schemas.SchemaVersion,
-        interfaceLanguages: Components.Schemas.RenderIndex.InterfaceLanguagesPayload,
-        references: Components.Schemas.RenderIndex.ReferencesPayload? = nil,
-        includedArchiveIdentifiers: [Swift.String]? = nil
-      ) {
-        self.schemaVersion = schemaVersion
-        self.interfaceLanguages = interfaceLanguages
-        self.references = references
-        self.includedArchiveIdentifiers = includedArchiveIdentifiers
-      }
-      package enum CodingKeys: String, CodingKey {
-        case schemaVersion
-        case interfaceLanguages
-        case references
-        case includedArchiveIdentifiers
-      }
-    }
-    /// - Remark: Generated from `#/components/schemas/Node`.
-    package struct Node: Codable, Hashable, Sendable {
-      /// - Remark: Generated from `#/components/schemas/Node/title`.
-      package var title: Swift.String {
-        get {
-          self.storage.value.title
-        }
-        _modify {
-          yield &self.storage.value.title
-        }
-      }
-      /// - Remark: Generated from `#/components/schemas/Node/type`.
-      @frozen package enum _TypePayload: String, Codable, Hashable, Sendable, CaseIterable {
-        case article = "article"
-        case _associatedtype = "associatedtype"
-        case buildSetting = "buildSetting"
-        case _case = "case"
-        case collection = "collection"
-        case _class = "class"
-        case container = "container"
-        case dictionarySymbol = "dictionarySymbol"
-        case _enum = "enum"
-        case _extension = "extension"
-        case _func = "func"
-        case groupMarker = "groupMarker"
-        case httpRequest = "httpRequest"
-        case _init = "init"
-        case languageGroup = "languageGroup"
-        case learn = "learn"
-        case macro = "macro"
-        case method = "method"
-        case module = "module"
-        case op = "op"
-        case overview = "overview"
-        case project = "project"
-        case property = "property"
-        case propertyListKey = "propertyListKey"
-        case propertyListKeyReference = "propertyListKeyReference"
-        case _protocol = "protocol"
-        case resources = "resources"
-        case root = "root"
-        case sampleCode = "sampleCode"
-        case section = "section"
-        case _struct = "struct"
-        case _subscript = "subscript"
-        case symbol = "symbol"
-        case _typealias = "typealias"
-        case union = "union"
-        case _var = "var"
-      }
-      /// - Remark: Generated from `#/components/schemas/Node/type`.
-      package var _type: Components.Schemas.Node._TypePayload? {
-        get {
-          self.storage.value._type
-        }
-        _modify {
-          yield &self.storage.value._type
-        }
-      }
-      /// - Remark: Generated from `#/components/schemas/Node/path`.
-      package var path: Swift.String? {
-        get {
-          self.storage.value.path
-        }
-        _modify {
-          yield &self.storage.value.path
-        }
-      }
-      /// - Remark: Generated from `#/components/schemas/Node/deprecated`.
-      package var deprecated: Swift.Bool? {
-        get {
-          self.storage.value.deprecated
-        }
-        _modify {
-          yield &self.storage.value.deprecated
-        }
-      }
-      /// - Remark: Generated from `#/components/schemas/Node/external`.
-      package var external: Swift.Bool? {
-        get {
-          self.storage.value.external
-        }
-        _modify {
-          yield &self.storage.value.external
-        }
-      }
-      /// - Remark: Generated from `#/components/schemas/Node/beta`.
-      package var beta: Swift.Bool? {
-        get {
-          self.storage.value.beta
-        }
-        _modify {
-          yield &self.storage.value.beta
-        }
-      }
-      /// - Remark: Generated from `#/components/schemas/Node/icon`.
-      package var icon: Swift.String? {
-        get {
-          self.storage.value.icon
-        }
-        _modify {
-          yield &self.storage.value.icon
-        }
-      }
-      /// - Remark: Generated from `#/components/schemas/Node/children`.
-      package var children: [Components.Schemas.Node]? {
-        get {
-          self.storage.value.children
-        }
-        _modify {
-          yield &self.storage.value.children
-        }
-      }
-      /// Creates a new `Node`.
-      ///
-      /// - Parameters:
-      ///   - title:
-      ///   - _type:
-      ///   - path:
-      ///   - deprecated:
-      ///   - external:
-      ///   - beta:
-      ///   - icon:
-      ///   - children:
-      package init(
-        title: Swift.String,
-        _type: Components.Schemas.Node._TypePayload? = nil,
-        path: Swift.String? = nil,
-        deprecated: Swift.Bool? = nil,
-        external: Swift.Bool? = nil,
-        beta: Swift.Bool? = nil,
-        icon: Swift.String? = nil,
-        children: [Components.Schemas.Node]? = nil
-      ) {
-        self.storage = .init(
-          value: .init(
-            title: title,
-            _type: _type,
-            path: path,
-            deprecated: deprecated,
-            external: external,
-            beta: beta,
-            icon: icon,
-            children: children
-          ))
-      }
-      package enum CodingKeys: String, CodingKey {
-        case title
-        case _type = "type"
-        case path
-        case deprecated
-        case external
-        case beta
-        case icon
-        case children
-      }
-      package init(from decoder: any Decoder) throws {
-        self.storage = try .init(from: decoder)
-      }
-      package func encode(to encoder: any Encoder) throws {
-        try self.storage.encode(to: encoder)
-      }
-      /// Internal reference storage to allow type recursion.
-      private var storage: OpenAPIRuntime.CopyOnWriteBox<Storage>
-      private struct Storage: Codable, Hashable, Sendable {
-        /// - Remark: Generated from `#/components/schemas/Node/title`.
-        var title: Swift.String
-        /// - Remark: Generated from `#/components/schemas/Node/type`.
-        enum _TypePayload: String, Codable, Hashable, Sendable, CaseIterable {
-          case article = "article"
-          case _associatedtype = "associatedtype"
-          case buildSetting = "buildSetting"
-          case _case = "case"
-          case collection = "collection"
-          case _class = "class"
-          case container = "container"
-          case dictionarySymbol = "dictionarySymbol"
-          case _enum = "enum"
-          case _extension = "extension"
-          case _func = "func"
-          case groupMarker = "groupMarker"
-          case httpRequest = "httpRequest"
-          case _init = "init"
-          case languageGroup = "languageGroup"
-          case learn = "learn"
-          case macro = "macro"
-          case method = "method"
-          case module = "module"
-          case op = "op"
-          case overview = "overview"
-          case project = "project"
-          case property = "property"
-          case propertyListKey = "propertyListKey"
-          case propertyListKeyReference = "propertyListKeyReference"
-          case _protocol = "protocol"
-          case resources = "resources"
-          case root = "root"
-          case sampleCode = "sampleCode"
-          case section = "section"
-          case _struct = "struct"
-          case _subscript = "subscript"
-          case symbol = "symbol"
-          case _typealias = "typealias"
-          case union = "union"
-          case _var = "var"
-        }
-        /// - Remark: Generated from `#/components/schemas/Node/type`.
-        var _type: Components.Schemas.Node._TypePayload?
-        /// - Remark: Generated from `#/components/schemas/Node/path`.
-        var path: Swift.String?
-        /// - Remark: Generated from `#/components/schemas/Node/deprecated`.
-        var deprecated: Swift.Bool?
-        /// - Remark: Generated from `#/components/schemas/Node/external`.
-        var external: Swift.Bool?
-        /// - Remark: Generated from `#/components/schemas/Node/beta`.
-        var beta: Swift.Bool?
-        /// - Remark: Generated from `#/components/schemas/Node/icon`.
-        var icon: Swift.String?
-        /// - Remark: Generated from `#/components/schemas/Node/children`.
-        var children: [Components.Schemas.Node]?
-        init(
-          title: Swift.String,
-          _type: Components.Schemas.Node._TypePayload? = nil,
-          path: Swift.String? = nil,
-          deprecated: Swift.Bool? = nil,
-          external: Swift.Bool? = nil,
-          beta: Swift.Bool? = nil,
-          icon: Swift.String? = nil,
-          children: [Components.Schemas.Node]? = nil
-        ) {
-          self.title = title
-          self._type = _type
-          self.path = path
-          self.deprecated = deprecated
-          self.external = external
-          self.beta = beta
-          self.icon = icon
-          self.children = children
-        }
-        typealias CodingKeys = Components.Schemas.Node.CodingKeys
-      }
-    }
-    /// - Remark: Generated from `#/components/schemas/ImageRenderReference2`.
-    package struct ImageRenderReference2: Codable, Hashable, Sendable {
-      /// - Remark: Generated from `#/components/schemas/ImageRenderReference2/type`.
-      @frozen package enum _TypePayload: String, Codable, Hashable, Sendable, CaseIterable {
-        case image = "image"
-      }
-      /// - Remark: Generated from `#/components/schemas/ImageRenderReference2/type`.
-      package var _type: Components.Schemas.ImageRenderReference2._TypePayload
-      /// - Remark: Generated from `#/components/schemas/ImageRenderReference2/alt`.
-      package var alt: Swift.String?
-      /// - Remark: Generated from `#/components/schemas/ImageRenderReference2/identifier`.
-      package var identifier: Swift.String
-      /// - Remark: Generated from `#/components/schemas/ImageRenderReference2/variants`.
-      package var variants: [Components.Schemas.RenderReferenceVariant2]
-      /// Creates a new `ImageRenderReference2`.
-      ///
-      /// - Parameters:
-      ///   - _type:
-      ///   - alt:
-      ///   - identifier:
-      ///   - variants:
-      package init(
-        _type: Components.Schemas.ImageRenderReference2._TypePayload,
-        alt: Swift.String? = nil,
-        identifier: Swift.String,
-        variants: [Components.Schemas.RenderReferenceVariant2]
-      ) {
-        self._type = _type
-        self.alt = alt
-        self.identifier = identifier
-        self.variants = variants
-      }
-      package enum CodingKeys: String, CodingKey {
-        case _type = "type"
-        case alt
-        case identifier
-        case variants
-      }
-    }
-    /// - Remark: Generated from `#/components/schemas/RenderReferenceVariant2`.
-    package struct RenderReferenceVariant2: Codable, Hashable, Sendable {
-      /// - Remark: Generated from `#/components/schemas/RenderReferenceVariant2/url`.
-      package var url: Swift.String
-      /// The ID attribute for the image that should be rendered in the SVG file represented by this variant.
-      ///
-      /// - Remark: Generated from `#/components/schemas/RenderReferenceVariant2/svgID`.
-      package var svgID: Swift.String?
-      /// - Remark: Generated from `#/components/schemas/RenderReferenceVariant2/traits`.
-      package var traits: [Components.Schemas.RenderReferenceVariantTrait]
-      /// Creates a new `RenderReferenceVariant2`.
-      ///
-      /// - Parameters:
-      ///   - url:
-      ///   - svgID: The ID attribute for the image that should be rendered in the SVG file represented by this variant.
-      ///   - traits:
-      package init(
-        url: Swift.String,
-        svgID: Swift.String? = nil,
-        traits: [Components.Schemas.RenderReferenceVariantTrait]
-      ) {
-        self.url = url
-        self.svgID = svgID
-        self.traits = traits
-      }
-      package enum CodingKeys: String, CodingKey {
-        case url
-        case svgID
-        case traits
+        case prerelease
+        case buildMetadata
       }
     }
     /// - Remark: Generated from `#/components/schemas/RenderNode`.
@@ -4767,9 +4795,9 @@ package enum Components {
     /// - Remark: Generated from `#/components/schemas/RenderReference1`.
     @frozen package enum RenderReference1: Codable, Hashable, Sendable {
       /// - Remark: Generated from `#/components/schemas/RenderReference1/case1`.
-      case ImageRenderReference3(Components.Schemas.ImageRenderReference3)
+      case ImageRenderReference(Components.Schemas.ImageRenderReference)
       /// - Remark: Generated from `#/components/schemas/RenderReference1/case2`.
-      case VideoRenderReference(Components.Schemas.VideoRenderReference)
+      case VideoRenderReference2(Components.Schemas.VideoRenderReference2)
       /// - Remark: Generated from `#/components/schemas/RenderReference1/case3`.
       case FileRenderReference(Components.Schemas.FileRenderReference)
       /// - Remark: Generated from `#/components/schemas/RenderReference1/case4`.
@@ -4787,13 +4815,13 @@ package enum Components {
       package init(from decoder: any Decoder) throws {
         var errors: [any Error] = []
         do {
-          self = .ImageRenderReference3(try .init(from: decoder))
+          self = .ImageRenderReference(try .init(from: decoder))
           return
         } catch {
           errors.append(error)
         }
         do {
-          self = .VideoRenderReference(try .init(from: decoder))
+          self = .VideoRenderReference2(try .init(from: decoder))
           return
         } catch {
           errors.append(error)
@@ -4848,9 +4876,9 @@ package enum Components {
       }
       package func encode(to encoder: any Encoder) throws {
         switch self {
-        case .ImageRenderReference3(let value):
+        case .ImageRenderReference(let value):
           try value.encode(to: encoder)
-        case .VideoRenderReference(let value):
+        case .VideoRenderReference2(let value):
           try value.encode(to: encoder)
         case .FileRenderReference(let value):
           try value.encode(to: encoder)
@@ -4869,74 +4897,49 @@ package enum Components {
         }
       }
     }
-    /// - Remark: Generated from `#/components/schemas/ImageRenderReference3`.
-    package struct ImageRenderReference3: Codable, Hashable, Sendable {
-      /// - Remark: Generated from `#/components/schemas/ImageRenderReference3/type`.
+    /// - Remark: Generated from `#/components/schemas/VideoRenderReference2`.
+    package struct VideoRenderReference2: Codable, Hashable, Sendable {
+      /// - Remark: Generated from `#/components/schemas/VideoRenderReference2/type`.
       @frozen package enum _TypePayload: String, Codable, Hashable, Sendable, CaseIterable {
-        case image = "image"
+        case video = "video"
       }
-      /// - Remark: Generated from `#/components/schemas/ImageRenderReference3/type`.
-      package var _type: Components.Schemas.ImageRenderReference3._TypePayload
-      /// - Remark: Generated from `#/components/schemas/ImageRenderReference3/alt`.
+      /// - Remark: Generated from `#/components/schemas/VideoRenderReference2/type`.
+      package var _type: Components.Schemas.VideoRenderReference2._TypePayload
+      /// - Remark: Generated from `#/components/schemas/VideoRenderReference2/alt`.
       package var alt: Swift.String?
-      /// - Remark: Generated from `#/components/schemas/ImageRenderReference3/identifier`.
+      /// - Remark: Generated from `#/components/schemas/VideoRenderReference2/identifier`.
       package var identifier: Swift.String
-      /// - Remark: Generated from `#/components/schemas/ImageRenderReference3/variants`.
-      package var variants: [Components.Schemas.RenderReferenceVariant3]
-      /// Creates a new `ImageRenderReference3`.
+      /// - Remark: Generated from `#/components/schemas/VideoRenderReference2/poster`.
+      package var poster: Swift.String?
+      /// - Remark: Generated from `#/components/schemas/VideoRenderReference2/variants`.
+      package var variants: [Components.Schemas.RenderReferenceVariant]
+      /// Creates a new `VideoRenderReference2`.
       ///
       /// - Parameters:
       ///   - _type:
       ///   - alt:
       ///   - identifier:
+      ///   - poster:
       ///   - variants:
       package init(
-        _type: Components.Schemas.ImageRenderReference3._TypePayload,
+        _type: Components.Schemas.VideoRenderReference2._TypePayload,
         alt: Swift.String? = nil,
         identifier: Swift.String,
-        variants: [Components.Schemas.RenderReferenceVariant3]
+        poster: Swift.String? = nil,
+        variants: [Components.Schemas.RenderReferenceVariant]
       ) {
         self._type = _type
         self.alt = alt
         self.identifier = identifier
+        self.poster = poster
         self.variants = variants
       }
       package enum CodingKeys: String, CodingKey {
         case _type = "type"
         case alt
         case identifier
+        case poster
         case variants
-      }
-    }
-    /// - Remark: Generated from `#/components/schemas/RenderReferenceVariant3`.
-    package struct RenderReferenceVariant3: Codable, Hashable, Sendable {
-      /// - Remark: Generated from `#/components/schemas/RenderReferenceVariant3/url`.
-      package var url: Swift.String
-      /// The ID attribute for the image that should be rendered in the SVG file represented by this variant.
-      ///
-      /// - Remark: Generated from `#/components/schemas/RenderReferenceVariant3/svgID`.
-      package var svgID: Swift.String?
-      /// - Remark: Generated from `#/components/schemas/RenderReferenceVariant3/traits`.
-      package var traits: [Components.Schemas.RenderReferenceVariantTrait]
-      /// Creates a new `RenderReferenceVariant3`.
-      ///
-      /// - Parameters:
-      ///   - url:
-      ///   - svgID: The ID attribute for the image that should be rendered in the SVG file represented by this variant.
-      ///   - traits:
-      package init(
-        url: Swift.String,
-        svgID: Swift.String? = nil,
-        traits: [Components.Schemas.RenderReferenceVariantTrait]
-      ) {
-        self.url = url
-        self.svgID = svgID
-        self.traits = traits
-      }
-      package enum CodingKeys: String, CodingKey {
-        case url
-        case svgID
-        case traits
       }
     }
     /// - Remark: Generated from `#/components/schemas/TopicRenderReference1`.
