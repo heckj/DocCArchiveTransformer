@@ -48,30 +48,57 @@ import VendoredDocC
 
   #expect(exampleIndex.includedArchiveIdentifiers.count == 1)
   #expect(exampleIndex.includedArchiveIdentifiers[0] == "ExampleDocs")
-  let interface_languages: Components.Schemas.RenderIndex.InterfaceLanguagesPayload = exampleIndex
-    .interfaceLanguages
+  let exampleIndex_interface_languages = exampleIndex.interfaceLanguages
 
-  #expect(interface_languages.additionalProperties.count == 1)
-  let nodes: [Components.Schemas.Node] = try #require(
-    interface_languages.additionalProperties["swift"])
-  let topNode = nodes[0]
+  #expect(exampleIndex_interface_languages.additionalProperties.count == 1)
+  let exampleDocsNodes: [Components.Schemas.Node] = try #require(
+    exampleIndex_interface_languages.additionalProperties["swift"])
 
-  print("type: \(topNode._type)")
-  print("title: \(topNode.title)")
-  print("path: \(topNode.path)")
-  print("beta: \(topNode.beta)")
-  print("deprecated: \(topNode.deprecated)")
-  print("icon: \(topNode.icon)")
-  print("external: \(topNode.external)")
-  print("children: \(topNode.children)")
+  exampleArchive.walkRenderIndexNodes(
+    nodes: exampleDocsNodes,
+    doing: { visitedNode, level in
+      let indent = String(repeating: "  ", count: level)
+      if let nodeType = visitedNode._type {
+        print("\(indent)[\(level)] type: \(nodeType.rawValue), title: \(visitedNode.title)")
+      } else {
+        print("\(indent)[\(level)] type: ?, title: \(visitedNode.title)")
+      }
+      print("\(indent)    path: \(visitedNode.path ?? "")")
+      print(
+        "\(indent)    beta: \(visitedNode.beta ?? false), deprecated: \(visitedNode.deprecated ?? false), external: \(visitedNode.external ?? false), icon: \(visitedNode.icon ?? "-none-")"
+      )
+    }
+  )
 
   // this is where all the indexed content is -
-  // referenced by path, type, and title, with each node potentiall having a list of children.
+  // referenced by path, type, and title, with each node potentially having a list of children.
 
   let sampleFixture = try #require(TestFixtures.sampleLibrary)
   let sampleArchive = Archive(path: sampleFixture.path)
   let sampleIndex = try sampleArchive.parseIndex()
-  //print(sampleIndex)
+  print(sampleIndex)
   #expect(sampleIndex.includedArchiveIdentifiers.count == 1)
   #expect(sampleIndex.includedArchiveIdentifiers[0] == "SampleLibrary")
+
+  let sampleIndex_interface_languages = sampleIndex.interfaceLanguages
+
+  #expect(sampleIndex_interface_languages.additionalProperties.count == 1)
+  let sampleLibraryNodes: [Components.Schemas.Node] = try #require(
+    sampleIndex_interface_languages.additionalProperties["swift"])
+
+  sampleArchive.walkRenderIndexNodes(
+    nodes: sampleLibraryNodes,
+    doing: { visitedNode, level in
+      let indent = String(repeating: "  ", count: level)
+      if let nodeType = visitedNode._type {
+        print("\(indent)[\(level)] type: \(nodeType.rawValue), title: \(visitedNode.title)")
+      } else {
+        print("\(indent)[\(level)] type: ?, title: \(visitedNode.title)")
+      }
+      print("\(indent)    path: \(visitedNode.path ?? "")")
+      print(
+        "\(indent)    beta: \(visitedNode.beta ?? false), deprecated: \(visitedNode.deprecated ?? false), external: \(visitedNode.external ?? false), icon: \(visitedNode.icon ?? "-none-")"
+      )
+    }
+  )
 }

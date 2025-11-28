@@ -64,6 +64,26 @@ public struct Archive {
     return index
   }
 
+  // recursive depth-first walk of tree of Nodes through the list provided, doing the
+  // function stuff on each node (visitor pattern)
+  func walkRenderIndexNodes(
+    nodes: [Components.Schemas.Node], doing: (Components.Schemas.Node, Int) -> Void
+  ) {
+    for node in nodes {
+      walkRenderIndexNodes(node: node, level: 0, doing: doing)
+    }
+  }
+
+  func walkRenderIndexNodes(
+    node: Components.Schemas.Node, level: Int, doing: (Components.Schemas.Node, Int) -> Void
+  ) {
+    doing(node, level)
+    if let childNodes = node.children {
+      for n in childNodes {
+        walkRenderIndexNodes(node: n, level: level + 1, doing: doing)
+      }
+    }
+  }
 }
 
 // JSON files to parse within a DocC Archive:
