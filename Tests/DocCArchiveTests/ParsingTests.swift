@@ -4,6 +4,29 @@ import VendoredDocC
 
 @testable import DocCArchive
 
+// I don't have a test fixture that uses `--enable-inherited-docs` - and
+// I don't think any detail about the fact that docs were or weren't inherited
+// are included within the archive data.
+
+// likewise, I'm not sure if the protection level for a symbol is included or not.
+
+// --include-extended-types / --exclude-extended-types
+// --experimental-skip-synthesized-symbols - determines at symbol-graph generation
+// time if the symbols are included or not. DocC doesn't care.
+
+//   --enable-inherited-docs Inherit documentation for inherited symbols
+// --enable-experimental-external-link-support
+//                        Support external links to this documentation output.
+//      Write additional link metadata files to the output directory to support
+//      resolving documentation links to the documentation in that output
+//      directory.
+// --enable-experimental-overloaded-symbol-presentation
+//                        Collects all the symbols that are overloads of each
+//                        other onto a new merged-symbol page.
+// --enable-mentioned-in/--disable-mentioned-in
+//                        Render a section on symbol documentation which links
+//                        to articles that mention that symbol (default:
+//                        --enable-mentioned-in)
 @Test func testParsingMetadata() async throws {
   let exampleFixture = try #require(TestFixtures.exampleDocs)
   let exampleArchive = Archive(path: exampleFixture.path)
@@ -42,7 +65,7 @@ import VendoredDocC
     print("summary: \(r.summary)")
     print("headings: \(r.headings)")
     print("indexable content: \(r.rawIndexableTextContent)")
-    print("platforms: \(r.platforms)")
+    print("platforms: \(String(describing: r.platforms))")
   }
 
   let sampleFixture = try #require(TestFixtures.sampleLibrary)

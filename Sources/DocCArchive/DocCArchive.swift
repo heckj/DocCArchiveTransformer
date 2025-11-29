@@ -23,6 +23,7 @@ public struct Archive {
   // │   appear to be used by the DocC Render single-page application. It seems to focus entirely
   // │   on the index.json in this directory, flattening the tree structure encoded and using the
   // │   `path` property to identify and reference the relevant JSON files to load (RenderNode.spec.json)
+  // │   looking at the option `--disable-indexing` in the plugin, that would align.
   // ├── indexing-records.json ✅ (full text search content within a flat list of IndexingRecord)
   // ├── linkable-entities.json
   // └── metadata.json ✅
