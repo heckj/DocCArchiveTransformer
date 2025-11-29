@@ -1,6 +1,5 @@
 import Foundation
 import Testing
-import VendoredDocC
 
 @testable import DocCArchive
 

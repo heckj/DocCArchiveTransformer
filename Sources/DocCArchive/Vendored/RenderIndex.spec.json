@@ -1,5 +1,5 @@
 {
-    "openapi": "3.1.0",
+    "openapi": "3.0.0",
     "info": {
         "description": "Specification of the Swift-DocC Index.json file.",
         "version": "0.1.2",
@@ -47,10 +47,7 @@
                 "description": "maps to https://github.com/swiftlang/swift-docc/blob/main/Sources/SwiftDocC/Indexing/RenderIndexJSON/RenderIndex.swift#L117.",
                 "type": "object",
                 "required": [
-                    "title",
-                    "deprecated",
-                    "external",
-                    "beta"
+                    "title"
                 ],
                 "properties": {
                     "title": {
@@ -101,15 +98,15 @@
                         "type": "string"
                     },
                     "deprecated": {
-                        "type": ["boolean", "null"],
+                        "type": "boolean",
                         "default": "false"
                     },
                     "external": {
-                        "type": ["boolean", "null"],
+                        "type": "boolean",
                         "default": "false"
                     },
                     "beta": {
-                        "type": ["boolean", "null"],
+                        "type": "boolean",
                         "default": "false"
                     },
                     "icon": {
