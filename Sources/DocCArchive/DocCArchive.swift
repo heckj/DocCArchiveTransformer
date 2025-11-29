@@ -23,6 +23,7 @@ public struct Archive {
   // │   appear to be used by the DocC Render single-page application. It seems to focus entirely
   // │   on the index.json in this directory, flattening the tree structure encoded and using the
   // │   `path` property to identify and reference the relevant JSON files to load (RenderNode.spec.json)
+  // │   looking at the option `--disable-indexing` in the plugin, that would align.
   // ├── indexing-records.json ✅ (full text search content within a flat list of IndexingRecord)
   // ├── linkable-entities.json
   // └── metadata.json ✅
@@ -68,23 +69,32 @@ public struct Archive {
     return index
   }
 
+  func parseRenderNode(dataPath: String) throws -> Components.Schemas.RenderNode {
+    let nodeURL = URL(filePath: path).appending(component: "data").appending(component: dataPath)
+      .appendingPathExtension("json")
+
+    let nodeBytes = try Data(contentsOf: nodeURL)
+    let index = try decoder.decode(Components.Schemas.RenderNode.self, from: nodeBytes)
+    return index
+  }
+
   // recursive depth-first walk of tree of Nodes through the list provided, doing the
   // function stuff on each node (visitor pattern)
   func walkRenderIndexNodes(
-    nodes: [Components.Schemas.Node], doing: (Components.Schemas.Node, Int) -> Void
-  ) {
+    nodes: [Components.Schemas.Node], doing: (Components.Schemas.Node, Int) throws -> Void
+  ) throws {
     for node in nodes {
-      walkRenderIndexNodes(node: node, level: 0, doing: doing)
+      try walkRenderIndexNodes(node: node, level: 0, doing: doing)
     }
   }
 
   func walkRenderIndexNodes(
-    node: Components.Schemas.Node, level: Int, doing: (Components.Schemas.Node, Int) -> Void
-  ) {
-    doing(node, level)
+    node: Components.Schemas.Node, level: Int, doing: (Components.Schemas.Node, Int) throws -> Void
+  ) throws {
+    try doing(node, level)
     if let childNodes = node.children {
       for n in childNodes {
-        walkRenderIndexNodes(node: n, level: level + 1, doing: doing)
+        try walkRenderIndexNodes(node: n, level: level + 1, doing: doing)
       }
     }
   }
