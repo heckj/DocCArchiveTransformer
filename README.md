@@ -2,8 +2,8 @@
 
 > NOTE: This isn't the same code as Helge's lovely 
 > [DocCArchive library](https://github.com/DoccZz/DocCArchive), which he built
-> and maintains manually. It serves loosely the same purpose, but is independently
-> created based on Source content available from 
+> and maintains by hand. It serves loosely the same purpose, but is independently
+> created based on OpenAPI data declarations provided from 
 > [Swift's DocC](https://github.com/swiftlang/swift-docc/).
 
 The data files for ingesting DocC archives source from the 
@@ -26,8 +26,3 @@ swift package --disable-sandbox generate-documentation --target SampleLibrary --
 rm -rf .build
 container run -it -c 4 -m 8g -v "$(pwd):/src" -w src/ swift:6.2 swift test
 ```
-
-
-### Random Notes
-
-- I'm trying NIOFilesystem as an alternative to Foundation's Bundle structure for navigating and interacting with the filesystem, but I think that I'd like to bind that behind a package trait down the road.
