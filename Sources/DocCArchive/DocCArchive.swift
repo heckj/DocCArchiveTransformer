@@ -3,19 +3,19 @@ internal import VendoredDocC
 
 public struct Archive {
   /// File path to the DocC Archive
-  public let path: String
+  public let baseArchivePath: String
 
   public init(path: String) {
-    self.path = path
+    self.baseArchivePath = path
   }
 
   // ExampleDocs.doccarchive
   // ├── assets.json
   // ├── data
-  // │   └── documentation
+  // │   └── documentation ✅
   // │       ├── exampledocs
-  // │       │   └── examplearticle.json
-  // │       └── exampledocs.json
+  // │       │   └── examplearticle.json ✅
+  // │       └── exampledocs.json ✅
   // ├── diagnostics.json ✅ (need an fixture that includes diagnostics)
   // ├── index
   // │   └── index.json ✅ (includes title, icon, and path in hierarchical tree of nodes)
@@ -23,15 +23,17 @@ public struct Archive {
   // │   appear to be used by the DocC Render single-page application. It seems to focus entirely
   // │   on the index.json in this directory, flattening the tree structure encoded and using the
   // │   `path` property to identify and reference the relevant JSON files to load (RenderNode.spec.json)
+  // │   looking at the option `--disable-indexing` in the plugin, that would align.
   // ├── indexing-records.json ✅ (full text search content within a flat list of IndexingRecord)
-  // ├── linkable-entities.json
+  // ├── linkable-entities.json ✅
   // └── metadata.json ✅
 
   let decoder = JSONDecoder()
 
   func parseMetadata() throws -> Components.Schemas.Metadata {
-    let metadataURL = URL(filePath: path).appending(component: "metadata").appendingPathExtension(
-      "json")
+    let metadataURL = URL(filePath: baseArchivePath).appending(component: "metadata")
+      .appendingPathExtension(
+        "json")
     // print("metadata URL calculated at \(metadataURL.path)")
 
     let metadataBytes = try Data(contentsOf: metadataURL)
@@ -40,7 +42,7 @@ public struct Archive {
   }
 
   func parseDiagnostics() throws -> Components.Schemas.Diagnostics {
-    let diagnosticsURL = URL(filePath: path).appending(component: "diagnostics")
+    let diagnosticsURL = URL(filePath: baseArchivePath).appending(component: "diagnostics")
       .appendingPathExtension("json")
 
     let diagnosticsBytes = try Data(contentsOf: diagnosticsURL)
@@ -49,8 +51,10 @@ public struct Archive {
     return diagnostics
   }
 
+  // full text index records - only available when the docc archive was
+  // created with `--emit-digest`
   func parseIndexingRecords() throws -> Components.Schemas.IndexingRecords {
-    let indexingRecordsURL = URL(filePath: path).appending(component: "indexing-records")
+    let indexingRecordsURL = URL(filePath: baseArchivePath).appending(component: "indexing-records")
       .appendingPathExtension("json")
 
     let indexingRecordsBytes = try Data(contentsOf: indexingRecordsURL)
@@ -59,33 +63,107 @@ public struct Archive {
     return indexingRecords
   }
 
+  // always available for the static hosting scenarios, which is default.
   func parseIndex() throws -> Components.Schemas.RenderIndex {
-    let indexURL = URL(filePath: path).appending(component: "index").appending(component: "index")
-      .appendingPathExtension("json")
+    let indexURL = URL(filePath: baseArchivePath).appending(component: "index").appending(
+      component: "index"
+    )
+    .appendingPathExtension("json")
 
     let indexBytes = try Data(contentsOf: indexURL)
     let index = try decoder.decode(Components.Schemas.RenderIndex.self, from: indexBytes)
     return index
   }
 
+  func parseRenderNode(dataPath: String) throws -> Components.Schemas.RenderNode {
+    let nodeURL = URL(filePath: baseArchivePath).appending(component: "data").appending(
+      component: dataPath
+    )
+    .appendingPathExtension("json")
+
+    let nodeBytes = try Data(contentsOf: nodeURL)
+    let index = try decoder.decode(Components.Schemas.RenderNode.self, from: nodeBytes)
+    return index
+  }
+
   // recursive depth-first walk of tree of Nodes through the list provided, doing the
-  // function stuff on each node (visitor pattern)
+  // function stuff on each node (visitor pattern). Not sure I care about the level
+  // beyond pretty printing, but leaving it in for now...
   func walkRenderIndexNodes(
-    nodes: [Components.Schemas.Node], doing: (Components.Schemas.Node, Int) -> Void
-  ) {
+    nodes: [Components.Schemas.Node], doing: (Components.Schemas.Node, Int) throws -> Void
+  ) throws {
     for node in nodes {
-      walkRenderIndexNodes(node: node, level: 0, doing: doing)
+      try walkRenderIndexNodes(node: node, level: 0, doing: doing)
     }
   }
 
   func walkRenderIndexNodes(
-    node: Components.Schemas.Node, level: Int, doing: (Components.Schemas.Node, Int) -> Void
-  ) {
-    doing(node, level)
+    node: Components.Schemas.Node, level: Int, doing: (Components.Schemas.Node, Int) throws -> Void
+  ) throws {
+    try doing(node, level)
     if let childNodes = node.children {
       for n in childNodes {
-        walkRenderIndexNodes(node: n, level: level + 1, doing: doing)
+        try walkRenderIndexNodes(node: n, level: level + 1, doing: doing)
       }
+    }
+  }
+
+  // only available when the archive was generated with the experimental linkable entities enabled
+  // This holds - or could hold - almost everything from the --emit-digest and quite a bit more, enabling
+  // easier references to content external to the DocC archive. Symbols include the usr (mangled name)
+  // and reference URL is on each, using the `doc://MODULENAME/documentatiopn/MODULENAME` custom URL structure.
+  func parseLinkableEntities() throws -> Components.Schemas.LinkableEntities {
+    let linkableEntitiesURL = URL(filePath: baseArchivePath).appending(
+      component: "linkable-entities"
+    )
+    .appendingPathExtension("json")
+
+    let linkableEntitiesBytes = try Data(contentsOf: linkableEntitiesURL)
+    let linkDestinations = try decoder.decode(
+      Components.Schemas.LinkableEntities.self, from: linkableEntitiesBytes)
+    return linkDestinations
+  }
+
+  func convert() throws {
+    // To walk an archive:
+    // open and parse the index (all into memory)
+    // index.interfaceLanguages -> .additionalProperties -> ["swift"] => [Nodes]
+    // [Nodes] is actually a list of tree structure Enums that you walk
+    let index = try self.parseIndex()
+
+    // index.includedArchiveIdentifiers is a list of the module names included in this archive.
+
+    let index_interface_languages = index.interfaceLanguages
+    // interfaceLanguages is a map of `String : [Node]` where the
+    // string is a language provided, and the list of nodes are the nodes
+    // for that language.
+    // The "additionalProperties" name of this is an artifact of how
+    // OpenAPI Spec gets rendered into Swift types. The upstream type
+    // that matches this (https://github.com/swiftlang/swift-docc/blob/main/Sources/SwiftDocC/Indexing/RenderIndexJSON/RenderIndex.swift#L24)
+    // has a property that's the map. Guessing openAPI doesn't do a great
+    // job of representing a dictionary other than treating it like a full JSON
+    // object.
+
+    // proper iteration would be to get the keys of `additionalProperties`
+    // and iterate through the whole key set.
+    if let listOfRenderNodes: [Components.Schemas.Node] =
+      index_interface_languages.additionalProperties["swift"]
+    {
+
+      // walk through the tree of nodes, opening path (if available, not all have paths).
+      // the path is the JSON location to the RenderNode, so open & parse that - and then do
+      // whatever transformation you want from there.
+      try self.walkRenderIndexNodes(
+        nodes: listOfRenderNodes,
+        doing: { visitedNode, level in
+          if let renderNodePath = visitedNode.path {
+            let _ = try self.parseRenderNode(dataPath: renderNodePath)
+            print("RenderNode (\(visitedNode.title) at \(renderNodePath) parsed")
+          } else {
+            print("Node title \(visitedNode.title) at level \(level) doesn't have a path")
+          }
+        }
+      )
     }
   }
 }

@@ -4,6 +4,29 @@ import VendoredDocC
 
 @testable import DocCArchive
 
+// I don't have a test fixture that uses `--enable-inherited-docs` - and
+// I don't think any detail about the fact that docs were or weren't inherited
+// are included within the archive data.
+
+// likewise, I'm not sure if the protection level for a symbol is included or not.
+
+// --include-extended-types / --exclude-extended-types
+// --experimental-skip-synthesized-symbols - determines at symbol-graph generation
+// time if the symbols are included or not. DocC doesn't care.
+
+//   --enable-inherited-docs Inherit documentation for inherited symbols
+// --enable-experimental-external-link-support
+//                        Support external links to this documentation output.
+//      Write additional link metadata files to the output directory to support
+//      resolving documentation links to the documentation in that output
+//      directory.
+// --enable-experimental-overloaded-symbol-presentation
+//                        Collects all the symbols that are overloads of each
+//                        other onto a new merged-symbol page.
+// --enable-mentioned-in/--disable-mentioned-in
+//                        Render a section on symbol documentation which links
+//                        to articles that mention that symbol (default:
+//                        --enable-mentioned-in)
 @Test func testParsingMetadata() async throws {
   let exampleFixture = try #require(TestFixtures.exampleDocs)
   let exampleArchive = Archive(path: exampleFixture.path)
@@ -42,7 +65,7 @@ import VendoredDocC
     print("summary: \(r.summary)")
     print("headings: \(r.headings)")
     print("indexable content: \(r.rawIndexableTextContent)")
-    print("platforms: \(r.platforms)")
+    print("platforms: \(String(describing: r.platforms))")
   }
 
   let sampleFixture = try #require(TestFixtures.sampleLibrary)
@@ -65,7 +88,7 @@ import VendoredDocC
   let exampleDocsNodes: [Components.Schemas.Node] = try #require(
     exampleIndex_interface_languages.additionalProperties["swift"])
 
-  exampleArchive.walkRenderIndexNodes(
+  try exampleArchive.walkRenderIndexNodes(
     nodes: exampleDocsNodes,
     doing: { visitedNode, level in
       let indent = String(repeating: "  ", count: level)
@@ -99,7 +122,7 @@ import VendoredDocC
   let sampleLibraryNodes: [Components.Schemas.Node] = try #require(
     sampleIndex_interface_languages.additionalProperties["swift"])
 
-  sampleArchive.walkRenderIndexNodes(
+  try sampleArchive.walkRenderIndexNodes(
     nodes: sampleLibraryNodes,
     doing: { visitedNode, level in
       let indent = String(repeating: "  ", count: level)
@@ -114,4 +137,103 @@ import VendoredDocC
       )
     }
   )
+}
+
+@Test func testParsingExampleDocsRenderNodes() async throws {
+  let fixture = try #require(TestFixtures.exampleDocs)
+  let archive = Archive(path: fixture.path)
+  let index = try archive.parseIndex()
+
+  #expect(index.includedArchiveIdentifiers.count == 1)
+  #expect(index.includedArchiveIdentifiers[0] == "ExampleDocs")
+  let index_interface_languages = index.interfaceLanguages
+
+  #expect(index_interface_languages.additionalProperties.count == 1)
+  let docsNodes: [Components.Schemas.Node] = try #require(
+    index_interface_languages.additionalProperties["swift"])
+
+  try archive.walkRenderIndexNodes(
+    nodes: docsNodes,
+    doing: { visitedNode, level in
+      if let renderNodePath = visitedNode.path {
+        let _ = try archive.parseRenderNode(dataPath: renderNodePath)
+        print("RenderNode (\(visitedNode.title) at \(renderNodePath) parsed")
+      } else {
+        print("Node title \(visitedNode.title) at level \(level) doesn't have a path")
+      }
+    }
+  )
+}
+
+@Test func testParsingSampleLibraryRenderNodes() async throws {
+  let fixture = try #require(TestFixtures.sampleLibrary)
+  let archive = Archive(path: fixture.path)
+  let index = try archive.parseIndex()
+
+  #expect(index.includedArchiveIdentifiers.count == 1)
+  #expect(index.includedArchiveIdentifiers[0] == "SampleLibrary")
+  let index_interface_languages = index.interfaceLanguages
+
+  #expect(index_interface_languages.additionalProperties.count == 1)
+  let docsNodes: [Components.Schemas.Node] = try #require(
+    index_interface_languages.additionalProperties["swift"])
+
+  try archive.walkRenderIndexNodes(
+    nodes: docsNodes,
+    doing: { visitedNode, level in
+      if let renderNodePath = visitedNode.path {
+        let _ = try archive.parseRenderNode(dataPath: renderNodePath)
+        print("RenderNode (\(visitedNode.title) at \(renderNodePath) parsed")
+      } else {
+        print(
+          "Node title \(visitedNode.title) at \(String(describing: visitedNode.path)) level \(level) doesn't have a path"
+        )
+      }
+    }
+  )
+}
+
+@Test func testParsingLinkableEntities() async throws {
+  let exampleFixture = try #require(TestFixtures.exampleDocs)
+  let exampleArchive = Archive(path: exampleFixture.path)
+  let exampleLinkDestinations = try exampleArchive.parseLinkableEntities()
+  //print(exampleLinkDestinations)
+  #expect(exampleLinkDestinations.count == 2)
+  //  for l in exampleLinkDestinations {
+  //    print("---")
+  //    print("title: \(l.title)")
+  //    print("abstract: \(l.abstract)")
+  //    print("languages: \(l.availableLanguages)")
+  //    print("fragments: \(l.fragments)")
+  //    print("nav fragments: \(l.navigatorFragments)")
+  //    print("reference url: \(l.referenceURL)")
+  //    print("usr: \(l.usr)")
+  //    print("kind: \(l.kind)")
+  //    print("path: \(l.path)")
+  //    print("platforms: \(l.platforms)")
+  //    print("taskGroups: \(l.taskGroups)")
+  //    print("plainText: \(l.plainTextDeclaration)")
+  //  }
+
+  let sampleFixture = try #require(TestFixtures.sampleLibrary)
+  let sampleArchive = Archive(path: sampleFixture.path)
+  let sampleLinkDestinations = try sampleArchive.parseLinkableEntities()
+  //print(sampleIndexingRecords)
+  for l in sampleLinkDestinations {
+    print("---")
+    print("title: \(l.title)")
+    print("abstract: \(l.abstract)")
+    print("languages: \(l.availableLanguages)")
+    print("fragments: \(l.fragments)")
+    print("nav fragments: \(l.navigatorFragments)")
+    print("reference url: \(l.referenceURL)")
+    print("usr: \(l.usr)")
+    print("kind: \(l.kind)")
+    print("path: \(l.path)")
+    print("platforms: \(l.platforms)")
+    print("taskGroups: \(l.taskGroups)")
+    print("plainText: \(l.plainTextDeclaration)")
+  }
+
+  #expect(sampleLinkDestinations.count == 26)
 }
