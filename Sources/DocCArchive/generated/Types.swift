@@ -655,6 +655,8 @@ package enum Components {
         case checksum
       }
     }
+    /// maps to https://github.com/swiftlang/swift-docc/blob/main/Sources/SwiftDocC/Benchmark/BenchmarkResults.swift#L14
+    ///
     /// - Remark: Generated from `#/components/schemas/Benchmark`.
     package struct Benchmark: Codable, Hashable, Sendable {
       /// - Remark: Generated from `#/components/schemas/Benchmark/doccArguments`.
@@ -881,6 +883,8 @@ package enum Components {
     }
     /// - Remark: Generated from `#/components/schemas/IndexingRecords`.
     package typealias IndexingRecords = [Components.Schemas.IndexingRecord]
+    /// Maps to https://github.com/swiftlang/swift-docc/blob/main/Sources/SwiftDocC/Indexing/IndexingRecord.swift#L14
+    ///
     /// - Remark: Generated from `#/components/schemas/IndexingRecord`.
     package struct IndexingRecord: Codable, Hashable, Sendable {
       /// - Remark: Generated from `#/components/schemas/IndexingRecord/kind`.
@@ -1127,6 +1131,8 @@ package enum Components {
     }
     /// - Remark: Generated from `#/components/schemas/LinkableEntities`.
     package typealias LinkableEntities = [Components.Schemas.LinkDestinationSummary]
+    /// maps to https://github.com/swiftlang/swift-docc/blob/main/Sources/SwiftDocC/LinkTargets/LinkDestinationSummary.swift#L76
+    ///
     /// - Remark: Generated from `#/components/schemas/LinkDestinationSummary`.
     package struct LinkDestinationSummary: Codable, Hashable, Sendable {
       /// - Remark: Generated from `#/components/schemas/LinkDestinationSummary/kind`.
@@ -2871,6 +2877,8 @@ package enum Components {
         case buildMetadata
       }
     }
+    /// maps to https://github.com/swiftlang/swift-docc/blob/main/Sources/SwiftDocC/Model/Rendering/RenderNode.swift#L91
+    ///
     /// - Remark: Generated from `#/components/schemas/RenderNode`.
     @frozen package enum RenderNode: Codable, Hashable, Sendable {
       /// - Remark: Generated from `#/components/schemas/RenderNode/case1`.

@@ -23,6 +23,7 @@ OpenAPI generator accepts a single OpenAPI spec file, so this directory merges t
 `openapi-merge.json`:
 
 ```bash
+cd Vendored
 npm i openapi-merge-cli
 npx openapi-merge-cli
 ``` 
@@ -34,6 +35,8 @@ is a dependency on this project, which makes the generator available for a `swif
 swift run swift-openapi-generator generate --mode types \
     --access-modifier package \
     --naming-strategy idiomatic \
-    --output-directory . \
-    merged-spec.json
+    --output-directory generated \
+    Vendored/merged-spec.json
 ``` 
+
+This is combined together in `Scripts/regenerate-types.sh` in this package.

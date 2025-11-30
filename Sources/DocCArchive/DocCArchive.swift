@@ -1,8 +1,8 @@
+import AsyncAlgorithms
 import Elementary
 import Foundation
 import NIOCore  // experiment - ByteBuffer
 import NIOFileSystem  // experiment - NIOFilesystem
-internal import VendoredDocC
 
 // Elementary
 struct Thing: HTML {
@@ -19,53 +19,6 @@ func run() async throws {
   // as it rolls (speedier)
 }
 
-// What's the API I want to expose here?
-//
-// Does Archive accept closures that give access to the parsed content types vended from VendoredDocC
-// or does it hide all that and just give you a "write this to HTML", "epub", "markdown", etc.
-// Do I want to provide something async here that uses NIOFileSystem (or remote data requests) to get
-// ByteBuffers and parse the JSON from them, invoked as needed while "walking" a DocC Archive?
-
-// I could also extend the VendoredDocC types and provide implementation wrappers to do the walking.
-
-// I guess at a high level, I'd like to be able to invoke a CLI that reads a DocC archive
-// (locally, maybe accessible over the internet through HTTP/HTTPS), and writes out (STDOUT? or to a file)
-// the resulting combined HTML content.
-//
-// There's a variation of this, generating snippet sections by "page" from the markdown that might make a
-// lot more sense for a RAG/semantic embedding index to the content, if that was being stored in a
-// Vector database for retrieval and processing. In that version, I'd want each of the chunks to be broken
-// up into smaller retrievable segments, not one giant "monster" doc - so something that dumps out a
-// sequence (async channel?) of markdown content would make sense. That would be more of a library/embedded
-// thing though - but returning an async stream (channel?) of blobs of data that I could just deal with
-// one after the other to combine into a single HTML, or deal with smaller segments at a time, could be nice.
-
-// So - expose a async stream of some kind - async Channel enables some support of back-pressure, which is
-// generally a good idea.
-//
-// How to wrangle the "raw data type" into "something useful" transformation (markdown, html, etc)?
-//
-// option 1 - hand in a closure that exposes the raw data types from VendoredDocC and you have your way,
-// returning whatever you want.
-// option 2 - I expose a protocol that you conform to, and take that in as a generic "consumer" of the types
-// that processes the data into something concrete. Then you hand that to the archive when you're either
-// initializing the darned thing, or when you initiate the stream output.
-// option 3 - I don't make that exposed at all, I just "do it" and take responsibility for the markdown
-// or HTML output doing whatever it is I'd like.
-//
-// output flows:
-// - chunks of HTML
-// - chunks of Markdown
-// - one big HTML
-// - one big Markdown
-// ? do I want to control the level of granularity here? For example, everything below the top node is a
-// "chapter" for an ePub document, and those are generated independently? Or maybe types and their properties
-// are combined into a single output, but each type gets their own "chunk" - and each article, and maybe each
-// step of a tutorial?
-
-// Swift Vector Database that works with MLX: https://github.com/rryam/VecturaKit
-// Embeddings w/ MLTensor: https://github.com/jkrukowski/swift-embeddings
-
 public struct Archive {
   /// File path to the DocC Archive
   public let baseArchivePath: String
@@ -75,28 +28,11 @@ public struct Archive {
     self.baseArchivePath = path
   }
 
-  // ExampleDocs.doccarchive
-  // ├── assets.json
-  // ├── data
-  // │   └── documentation ✅
-  // │       ├── exampledocs
-  // │       │   └── examplearticle.json ✅
-  // │       └── exampledocs.json ✅
-  // ├── diagnostics.json ✅ (need an fixture that includes diagnostics)
-  // ├── index
-  // │   └── index.json ✅ (includes title, icon, and path in hierarchical tree of nodes)
-  // │   (The index directory also contains a multi-segment LMDB database, but that doesn't
-  // │   appear to be used by the DocC Render single-page application. It seems to focus entirely
-  // │   on the index.json in this directory, flattening the tree structure encoded and using the
-  // │   `path` property to identify and reference the relevant JSON files to load (RenderNode.spec.json)
-  // │   looking at the option `--disable-indexing` in the plugin, that would align.
-  // ├── indexing-records.json ✅ (full text search content within a flat list of IndexingRecord)
-  // ├── linkable-entities.json ✅
-  // └── metadata.json ✅
-
   let decoder = JSONDecoder()
+  // TODO(PERF): maybe allow this to be provided - use alternate decoders (Ikagi, swift-extras, etc) if
+  // needed for better performance?
 
-  // NIO Filesystem data loading - async/await alternate to Foundation's Data(contentsOf:)
+  // TODO(PERF): Use NIO Filesystem data loading - async/await alternate to Foundation's Data(contentsOf:)
   func loadFile() async throws -> ByteBuffer {
     let path = FilePath(baseArchivePath + "metadata")
     let data = try await ByteBuffer(contentsOf: path, maximumSizeAllowed: .megabytes(1))
@@ -197,7 +133,17 @@ public struct Archive {
     return linkDestinations
   }
 
-  func convert() throws {
+  // I can start with this just being synchronous, and loading the whole damn thing into memory.
+  // Worst case examples - SwiftNIO, maybe SwiftAST - for the sheer number of symbols included within
+  // the resulting archive.
+
+  func convert<T>(transformer: some Transformer<T>) throws -> [T] {
+
+    // this ends up needing to be package because everything boils down to depending on the generated types, which I'm keeping at "package" access.
+    // That may be a mistake.
+
+    var results: [T] = []
+
     // To walk an archive:
     // open and parse the index (all into memory)
     // index.interfaceLanguages -> .additionalProperties -> ["swift"] => [Nodes]
@@ -222,7 +168,6 @@ public struct Archive {
     if let listOfRenderNodes: [Components.Schemas.Node] =
       index_interface_languages.additionalProperties["swift"]
     {
-
       // walk through the tree of nodes, opening path (if available, not all have paths).
       // the path is the JSON location to the RenderNode, so open & parse that - and then do
       // whatever transformation you want from there.
@@ -230,14 +175,85 @@ public struct Archive {
         nodes: listOfRenderNodes,
         doing: { visitedNode, level in
           if let renderNodePath = visitedNode.path {
-            let _ = try self.parseRenderNode(dataPath: renderNodePath)
+            let renderNode = try self.parseRenderNode(dataPath: renderNodePath)
             print("RenderNode (\(visitedNode.title) at \(renderNodePath) parsed")
+            results.append(try transformer.convert(node: renderNode))
           } else {
             print("Node title \(visitedNode.title) at level \(level) doesn't have a path")
           }
         }
       )
     }
+    return results
+  }
+
+  // This is going to be tricky - mostly getting the right understanding of what's sendable, isolated, etc - in order to provide access to the channel. Classic Swift advice says to serialize this to something like MainActor
+
+  //  /// provide access to an AsyncChannel of strings that make up the transformed content
+  //  public func withChunks(t: Transformer, s: ChunkStrategy, processChunk: nonisolated(nonsending) (AsyncChannel<String>) async -> ()) async throws {
+  //
+  //    // create an AsyncStream and present it to the processChunk closure to provide access to it
+  //    let channel = AsyncChannel<String>()
+  //
+  ////    Task {
+  ////    print("Consumer Task: Waiting for messages...")
+  ////    for await message in channel {
+  ////        print("Consumer Task: Received -> \(message)")
+  ////    }
+  ////    print("Consumer Task: Channel closed. Exiting.")
+  ////    }
+  //    // consuming the channel
+  //    try await withThrowingDiscardingTaskGroup { group in
+  //      group.addTask {
+  //        await processChunk(channel)
+  //      }
+  //    }
+  //
+  //    // 3. Task B: The producer (sender)
+  //    // This task sends messages and then finishes the channel.
+  //    Task {
+  //        print("Producer Task: Sending 'Hello'...")
+  //        await channel.send("Hello") // send will suspend until a receiver is ready
+  //
+  //        print("Producer Task: Sending 'World'...")
+  //        await channel.send("World")
+  //
+  //        print("Producer Task: Finishing channel...")
+  //        // Calling finish() signals the end of the sequence to the consumer task.
+  //        channel.finish()
+  //    }
+  //
+  //  }
+
+}
+
+/// The strategy for converting the tree of nodes into sequences that get rendered into contiguous, static content
+public enum ChunkStrategy {
+  /// One big file with everything in it
+  case one
+  /// DocC classic - every file gets its own chunk of data
+  case everySymbol
+  /// Slightly optimized from DocC classic - properties, methods, etc on a type are collapsed into the page for the type.
+  case collapsedToType
+}
+
+protocol Transformer<T> {
+  associatedtype T
+  func convert(node: Components.Schemas.RenderNode) throws -> T
+}
+
+// make into a protocol - implement a "MarkdownTransformer", "HTMLTransformer"
+public struct MyHTMLTransformer: Transformer {
+  func convert(node: Components.Schemas.RenderNode) throws -> some HTML {
+    // this may need access to look up/load other nodes for their content...
+    return HTMLRaw("<!-- what? -->")
+  }
+}
+
+public struct MyMarkdownTransformer: Transformer {
+  func convert(node: Components.Schemas.RenderNode) throws -> String {
+    // this may need access to look up/load other nodes for their content...
+    return ""
   }
 }
 

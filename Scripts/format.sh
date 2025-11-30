@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -eou pipefail
+
 ##===----------------------------------------------------------------------===##
 ##
 ## This source file is part of the Swift Argument Parser open source project

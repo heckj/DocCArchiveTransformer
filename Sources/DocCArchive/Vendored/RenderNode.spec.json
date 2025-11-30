@@ -9,7 +9,7 @@
     "components": {
         "schemas": {
             "RenderNode": {
-                "description": "maps to https://github.com/swiftlang/swift-docc/blob/main/Sources/SwiftDocC/Model/Rendering/RenderNode.swift#L91"
+                "description": "maps to https://github.com/swiftlang/swift-docc/blob/main/Sources/SwiftDocC/Model/Rendering/RenderNode.swift#L91",
                 "oneOf": [
                     {
                         "$ref": "#/components/schemas/TutorialsPageRenderNode"

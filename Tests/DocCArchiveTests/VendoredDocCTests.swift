@@ -1,7 +1,7 @@
+import DocCArchive
 import Testing
-import VendoredDocC
 
 @Test func verifyVersionExists() async throws {
-  #expect(!VendoredDocC.VendoredVersion.description.isEmpty)
-  #expect(!VendoredDocC.VendoredVersion.commit.isEmpty)
+  #expect(!VendoredVersion.description.isEmpty)
+  #expect(!VendoredVersion.commit.isEmpty)
 }
