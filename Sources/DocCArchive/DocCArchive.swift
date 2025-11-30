@@ -1,3 +1,4 @@
+import AsyncAlgorithms
 import Elementary
 import Foundation
 import NIOCore  // experiment - ByteBuffer
@@ -27,28 +28,11 @@ public struct Archive {
     self.baseArchivePath = path
   }
 
-  // ExampleDocs.doccarchive
-  // ├── assets.json
-  // ├── data
-  // │   └── documentation ✅
-  // │       ├── exampledocs
-  // │       │   └── examplearticle.json ✅
-  // │       └── exampledocs.json ✅
-  // ├── diagnostics.json ✅ (need an fixture that includes diagnostics)
-  // ├── index
-  // │   └── index.json ✅ (includes title, icon, and path in hierarchical tree of nodes)
-  // │   (The index directory also contains a multi-segment LMDB database, but that doesn't
-  // │   appear to be used by the DocC Render single-page application. It seems to focus entirely
-  // │   on the index.json in this directory, flattening the tree structure encoded and using the
-  // │   `path` property to identify and reference the relevant JSON files to load (RenderNode.spec.json)
-  // │   looking at the option `--disable-indexing` in the plugin, that would align.
-  // ├── indexing-records.json ✅ (full text search content within a flat list of IndexingRecord)
-  // ├── linkable-entities.json ✅
-  // └── metadata.json ✅
-
   let decoder = JSONDecoder()
+  // TODO(PERF): maybe allow this to be provided - use alternate decoders (Ikagi, swift-extras, etc) if
+  // needed for better performance?
 
-  // NIO Filesystem data loading - async/await alternate to Foundation's Data(contentsOf:)
+  // TODO(PERF): Use NIO Filesystem data loading - async/await alternate to Foundation's Data(contentsOf:)
   func loadFile() async throws -> ByteBuffer {
     let path = FilePath(baseArchivePath + "metadata")
     let data = try await ByteBuffer(contentsOf: path, maximumSizeAllowed: .megabytes(1))
@@ -149,7 +133,7 @@ public struct Archive {
     return linkDestinations
   }
 
-  func convert() throws {
+  public func convert() throws {
     // To walk an archive:
     // open and parse the index (all into memory)
     // index.interfaceLanguages -> .additionalProperties -> ["swift"] => [Nodes]
@@ -191,8 +175,63 @@ public struct Archive {
       )
     }
   }
+
+  // This is going to be tricky - mostly getting the right understanding of what's sendable, isolated, etc - in order to provide access to the channel. Classic Swift advice says to serialize this to something like MainActor
+
+  //  /// provide access to an AsyncChannel of strings that make up the transformed content
+  //  public func withChunks(t: Transformer, s: ChunkStrategy, processChunk: nonisolated(nonsending) (AsyncChannel<String>) async -> ()) async throws {
+  //
+  //    // create an AsyncStream and present it to the processChunk closure to provide access to it
+  //    let channel = AsyncChannel<String>()
+  //
+  ////    Task {
+  ////    print("Consumer Task: Waiting for messages...")
+  ////    for await message in channel {
+  ////        print("Consumer Task: Received -> \(message)")
+  ////    }
+  ////    print("Consumer Task: Channel closed. Exiting.")
+  ////    }
+  //    // consuming the channel
+  //    try await withThrowingDiscardingTaskGroup { group in
+  //      group.addTask {
+  //        await processChunk(channel)
+  //      }
+  //    }
+  //
+  //    // 3. Task B: The producer (sender)
+  //    // This task sends messages and then finishes the channel.
+  //    Task {
+  //        print("Producer Task: Sending 'Hello'...")
+  //        await channel.send("Hello") // send will suspend until a receiver is ready
+  //
+  //        print("Producer Task: Sending 'World'...")
+  //        await channel.send("World")
+  //
+  //        print("Producer Task: Finishing channel...")
+  //        // Calling finish() signals the end of the sequence to the consumer task.
+  //        channel.finish()
+  //    }
+  //
+  //  }
+
 }
 
+/// The strategy for converting the tree of nodes into sequences that get rendered into contiguous, static content
+public enum ChunkStrategy {
+  /// One big file with everything in it
+  case one
+  /// DocC classic - every file gets its own chunk of data
+  case everySymbol
+  /// Slightly optimized from DocC classic - properties, methods, etc on a type are collapsed into the page for the type.
+  case collapsedToType
+}
+
+public struct Transformer {
+  func convert(node: Components.Schemas.RenderNode) async throws -> String {
+    // this may need access to look up/load other nodes for their content...
+    return ""
+  }
+}
 // JSON files to parse within a DocC Archive:
 //
 // ExampleDocs.doccarchive

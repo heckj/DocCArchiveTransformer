@@ -17,6 +17,7 @@ let package = Package(
   dependencies: [
     .package(url: "https://github.com/apple/swift-openapi-generator", from: "1.10.0"),
     .package(url: "https://github.com/apple/swift-openapi-runtime", from: "1.8.0"),
+    .package(url: "https://github.com/apple/swift-async-algorithms", from: "1.0.0"),
     .package(url: "https://github.com/apple/swift-nio", from: "2.0.0"),
     .package(url: "https://github.com/sliemeobn/elementary.git", from: "0.3.2"),
     .package(url: "https://github.com/apple/swift-argument-parser", from: "1.6.0"),
@@ -28,6 +29,7 @@ let package = Package(
         .product(name: "Elementary", package: "elementary"),
         .product(name: "_NIOFileSystem", package: "swift-nio"),
         .product(name: "OpenAPIRuntime", package: "swift-openapi-runtime"),
+        .product(name: "AsyncAlgorithms", package: "swift-async-algorithms"),
       ],
       exclude: [
         "README.md",

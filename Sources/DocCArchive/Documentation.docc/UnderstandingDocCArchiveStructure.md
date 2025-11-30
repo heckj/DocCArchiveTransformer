@@ -34,7 +34,9 @@ An archive **can** incorporate more than one module (originally they were only f
 The symbols within the archive are represented by "Nodes" found within the Index - a list of them.
 But each node is actually a tree structure, so the list of nodes is really a list of tree data structures.
 
-The data structures are defined in the ``VendoredDocC`` module, which has Swift types that provide the codable representations based on the OpenAPI specs that are provided within the DocC project itself.
+The data structures are defined in the `Types.swift`, which it generated using the OpenAPI generator from the OpenAPI spec descriptions provided within the DocC project itself.
+The types are intentionally _not_ public.
+
 There are some awkward spots where OpenAPI can't directly/easily represent the original type structure (specifically
 around dictionaries or maps as properties on types), but otherwise maps reasonably well. The upstream
 OpenAPI declarations don't, however, include any direct documentation of the types. In the sources within this
