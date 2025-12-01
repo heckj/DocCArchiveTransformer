@@ -31,3 +31,7 @@ playground.xcworkspace
 
 .build/
 
+# NPM tooling in this repo
+Sources/DocCArchive/Vendored/node_modules/
+Sources/DocCArchive/Vendored/package-lock.json
+

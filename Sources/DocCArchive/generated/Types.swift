@@ -73,7 +73,7 @@ package enum Components {
       /// - Remark: Generated from `#/components/schemas/RenderIndex/references`.
       package var references: Components.Schemas.RenderIndex.ReferencesPayload?
       /// - Remark: Generated from `#/components/schemas/RenderIndex/includedArchiveIdentifiers`.
-      package var includedArchiveIdentifiers: [Swift.String]
+      package var includedArchiveIdentifiers: [Swift.String]?
       /// Creates a new `RenderIndex`.
       ///
       /// - Parameters:
@@ -85,7 +85,7 @@ package enum Components {
         schemaVersion: Components.Schemas.SchemaVersion,
         interfaceLanguages: Components.Schemas.RenderIndex.InterfaceLanguagesPayload,
         references: Components.Schemas.RenderIndex.ReferencesPayload? = nil,
-        includedArchiveIdentifiers: [Swift.String]
+        includedArchiveIdentifiers: [Swift.String]? = nil
       ) {
         self.schemaVersion = schemaVersion
         self.interfaceLanguages = interfaceLanguages

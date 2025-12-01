@@ -33,6 +33,9 @@ let package = Package(
       ],
       exclude: [
         "README.md",
+        "Vendored/package.json",
+        "Vendored/package-lock.json",
+        "Vendored/node_modules/",
         "Vendored/openapi-merge.json",
         "Vendored/merged-spec.json",
         "Vendored/Assets.json",

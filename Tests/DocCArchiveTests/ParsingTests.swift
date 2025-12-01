@@ -79,10 +79,11 @@ import Testing
   let exampleArchive = Archive(path: exampleFixture.path)
   let exampleIndex = try exampleArchive.parseIndex()
 
-  #expect(exampleIndex.includedArchiveIdentifiers.count == 1)
-  #expect(exampleIndex.includedArchiveIdentifiers[0] == "ExampleDocs")
-  let exampleIndex_interface_languages = exampleIndex.interfaceLanguages
+  let exampleArchiveIdentifiers = try #require(exampleIndex.includedArchiveIdentifiers)
+  #expect(exampleArchiveIdentifiers.count == 1)
+  #expect(exampleArchiveIdentifiers[0] == "ExampleDocs")
 
+  let exampleIndex_interface_languages = exampleIndex.interfaceLanguages
   #expect(exampleIndex_interface_languages.additionalProperties.count == 1)
   let exampleDocsNodes: [Components.Schemas.Node] = try #require(
     exampleIndex_interface_languages.additionalProperties["swift"])
@@ -112,11 +113,12 @@ import Testing
   let sampleArchive = Archive(path: sampleFixture.path)
   let sampleIndex = try sampleArchive.parseIndex()
   print(sampleIndex)
-  #expect(sampleIndex.includedArchiveIdentifiers.count == 1)
-  #expect(sampleIndex.includedArchiveIdentifiers[0] == "SampleLibrary")
+
+  let sampleArchiveIdentifiers = try #require(sampleIndex.includedArchiveIdentifiers)
+  #expect(sampleArchiveIdentifiers.count == 1)
+  #expect(sampleArchiveIdentifiers[0] == "SampleLibrary")
 
   let sampleIndex_interface_languages = sampleIndex.interfaceLanguages
-
   #expect(sampleIndex_interface_languages.additionalProperties.count == 1)
   let sampleLibraryNodes: [Components.Schemas.Node] = try #require(
     sampleIndex_interface_languages.additionalProperties["swift"])
@@ -143,10 +145,11 @@ import Testing
   let archive = Archive(path: fixture.path)
   let index = try archive.parseIndex()
 
-  #expect(index.includedArchiveIdentifiers.count == 1)
-  #expect(index.includedArchiveIdentifiers[0] == "ExampleDocs")
-  let index_interface_languages = index.interfaceLanguages
+  let archiveIdentifiers = try #require(index.includedArchiveIdentifiers)
+  #expect(archiveIdentifiers.count == 1)
+  #expect(archiveIdentifiers[0] == "ExampleDocs")
 
+  let index_interface_languages = index.interfaceLanguages
   #expect(index_interface_languages.additionalProperties.count == 1)
   let docsNodes: [Components.Schemas.Node] = try #require(
     index_interface_languages.additionalProperties["swift"])
@@ -169,10 +172,11 @@ import Testing
   let archive = Archive(path: fixture.path)
   let index = try archive.parseIndex()
 
-  #expect(index.includedArchiveIdentifiers.count == 1)
-  #expect(index.includedArchiveIdentifiers[0] == "SampleLibrary")
-  let index_interface_languages = index.interfaceLanguages
+  let archiveIdentifiers = try #require(index.includedArchiveIdentifiers)
+  #expect(archiveIdentifiers.count == 1)
+  #expect(archiveIdentifiers[0] == "SampleLibrary")
 
+  let index_interface_languages = index.interfaceLanguages
   #expect(index_interface_languages.additionalProperties.count == 1)
   let docsNodes: [Components.Schemas.Node] = try #require(
     index_interface_languages.additionalProperties["swift"])

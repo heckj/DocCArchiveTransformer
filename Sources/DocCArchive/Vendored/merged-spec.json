@@ -13,8 +13,7 @@
         "type": "object",
         "required": [
           "schemaVersion",
-          "interfaceLanguages",
-          "includedArchiveIdentifiers"
+          "interfaceLanguages"
         ],
         "properties": {
           "schemaVersion": {

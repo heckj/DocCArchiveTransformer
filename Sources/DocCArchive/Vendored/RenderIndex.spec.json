@@ -14,7 +14,6 @@
                 "required": [
                     "schemaVersion",
                     "interfaceLanguages",
-                    "includedArchiveIdentifiers"
                 ],
                 "properties": {
                     "schemaVersion": {
